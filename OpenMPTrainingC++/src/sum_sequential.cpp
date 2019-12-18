@@ -4,6 +4,7 @@
 using namespace std;
 void printSumWithTimes(int sum, int start, int end);
 void printNumThreads();
+void recordThreadIndex(int index);
 void sum_sequential(double* array, int size) {
 
 	cout << "sum_sequential\n";
@@ -12,8 +13,10 @@ void sum_sequential(double* array, int size) {
 
 	double sum = 0;
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; i++) {
 		sum += array[i];
+		recordThreadIndex(i);
+	}
 
 	double end = omp_get_wtime();
 
