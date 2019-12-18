@@ -53,6 +53,7 @@ void printThreadLastIndex() {
 	for (int i = 0; i < numThreads; i++) {
 		cout << "thread:" << i << " lastIndex:" << threadsLastIndex[i] << endl;
 	}
+	cout << "_____________________________" << endl;
 }
 
 
