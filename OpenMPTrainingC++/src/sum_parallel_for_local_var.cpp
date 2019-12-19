@@ -3,7 +3,6 @@
 
 using namespace std;
 
-//const int SIZE = 1000;
 void printSumWithTimes (int sum, int start, int end);
 void printNumThreads();
 void recordThreadIndex(int index);
