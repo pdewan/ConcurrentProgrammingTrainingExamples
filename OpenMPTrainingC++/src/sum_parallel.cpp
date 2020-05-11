@@ -13,8 +13,10 @@ void sum_parallel(double* array, int size) {
 
 	double sum = 0;
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; i++) {
 		sum += array[i];
+		recordThreadIndex(i);
+	}
 
 	double end = omp_get_wtime();
 

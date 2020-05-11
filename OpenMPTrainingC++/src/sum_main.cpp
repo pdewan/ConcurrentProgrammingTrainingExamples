@@ -8,9 +8,6 @@ void sum_parallel_for_reduction(double* array, int size);
 void sum_parallel(double* array, int size);
 void sum_parallel_for_local_var(double* array, int size);
 
-// if this main is used to call functions to do other computations
-// then those headers should also be declared here
-
 const int SIZE = 1000;
 void initArray (double* array, int size ) {
 	for(int i = 0; i < size; i++)
