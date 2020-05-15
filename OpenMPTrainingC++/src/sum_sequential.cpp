@@ -1,24 +1,37 @@
 #include <iostream>
 #include <omp.h>
-
 using namespace std;
+
+void initArrayAndTracing (double* aNumbers, int aSize);
+void printThreadLastIndices();
 void printSumWithTimes(int sum, int start, int end);
 void printNumThreads();
 void recordThreadIndex(int index);
-void sum_sequential(double* array, int size) {
+
+const int SIZE = 1000;
+
+void sum_sequential(double* aNumbers, int aSize) {
 
 	cout << "sum_sequential\n";
 
-	double start = omp_get_wtime();
+	double aStartTime = omp_get_wtime();
 
-	double sum = 0;
+	double aSum = 0;
 
-	for (int i = 0; i < size; i++) {
-		sum += array[i];
+	for (int i = 0; i < aSize; i++) {
+		aSum += aNumbers[i];
 		recordThreadIndex(i);
 	}
 
-	double end = omp_get_wtime();
+	double anEndTime = omp_get_wtime();
 
-	printSumWithTimes(sum, start, end);
+	printSumWithTimes(aSum, aStartTime, anEndTime);
 }
+
+void sum_sequential_main() {
+	double* aNumbers = new double[SIZE];
+	initArrayAndTracing(aNumbers, SIZE);
+	sum_sequential(aNumbers, SIZE);
+	printThreadLastIndices();
+}
+

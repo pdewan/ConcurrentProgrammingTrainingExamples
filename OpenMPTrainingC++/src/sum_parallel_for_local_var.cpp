@@ -1,11 +1,15 @@
 #include <iostream>
 #include <omp.h>
-
 using namespace std;
 
-void printSumWithTimes (int sum, int start, int end);
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
 void printNumThreads();
 void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
 void sum_parallel_for_local_var(double* array, int size)
 {
 	cout << "sum_parallel_for_local_var\n";
@@ -24,3 +28,14 @@ void sum_parallel_for_local_var(double* array, int size)
 	printSumWithTimes(sum, start, end);
 	
 }
+
+void sum_parallel_for_local_var_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel_for_local_var(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_for_local_var_driver();
+//}
