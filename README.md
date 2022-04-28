@@ -1,2 +1,2 @@
 # OpenMPTraining
-Project for OpenMP Training Workshops
+Information to be shared with trainees in workshops on concurrent programming
