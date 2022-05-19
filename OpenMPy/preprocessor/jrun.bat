@@ -1,0 +1,2 @@
+cls
+jython output.py

@@ -1,0 +1,297 @@
+\documentclass[letterpaper,12pt]{article} %amsart
+\usepackage[raggedright]{titlesec}
+\usepackage[margin=1in]{geometry}
+%\renewcommand{\thesection}{\Large{\textbf{section}}}
+%\renewcommand{\thesubsection}{\Alph{subsection}}
+\usepackage{indentfirst}
+\usepackage{secdot}
+\usepackage{titlesec}
+\usepackage{xcolor, soul}
+\usepackage{mathabx}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{float}
+\usepackage{parcolumns}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\newfloat{Code}{H}{myc}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=2pt,
+    firstnumber=1,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    xleftmargin=.8cm,
+    xrightmargin=.8cm
+}
+\lstset{style=mystyle}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\sethlcolor{yellow}
+\sectiondot{subsection}
+\setlength{\parindent}{1em}
+\raggedbottom %*fix for extra gap between paragraphs in ML section
+
+%\titleformat{\section}{\centering\uppercase}{\thesection.}{0.5em}{}
+%\titleformat{\subsection}{\itshape}{\thesubsection.}{0.5em}{}
+
+
+\begin{document}
+\title{\Large{\textbf{OpenMP for Python User Guide}}}
+\author{Caleb Huck}
+\date{June 8th, 2021}
+\maketitle
+%\clearpage
+
+\section{Introduction}
+OpenMP (Open Multiprocessing) is a shared-memory, thread-based, parallel library that was originally written for FORTRAN, C, and C++. OpenMP removes the responsibility for thread creation and management from the user, allowing them instead to describe how the code should be run in parallel and what concurrent dependencies exist. This is done through the uses of directives, clauses, and a runtime library. As far as we are aware, this project is the first effort to bring OpenMP to Python. Python is a very different language than any of the original supported languages, and therefore is not a ``one-to-one" with the original API. With that in mind, the purpose of this user guide is to inform the reader on how to use this software and the differences from the original OpenMP. Therefore we assume prior understand and experience with OpenMP. If you don't know OpenMP, or need to brush up before continuing with this document, there are many excellent online resources, such as Tim Mattson's \href{https://youtu.be/pRtTIW9-Nr0}{A "Hands-on" Introduction to OpenMP} or the \href{https://hpc.llnl.gov/training/tutorials/openmp-tutorial}{Lawrence Livermore National Laboratory OpenMP Tutorial} or any one of many others available.
+
+\section{Quick Note About Data Structures}
+Python lists are implemented as objects that allow array-like syntax, and therefore do not behave like primitive C arrays. They are automatically locked for both reading and writing, even if reading or writing to different indices in the list. This means that any parallel program with a significant amount of shared list access will not see good speedup, if any at all. As a partial workaround for this problem, we recommend using the jarray.array or jarray.zeros functions. These functions return an object that wraps an underlying primitive Java array with nearly identical behavior and member functions to regular lists, and are not locked for reading (unfortunately, writing is still locked). Their signatures are given below, along with a chart of supported types and an example. 
+
+\texttt{jarray.array(sequence, type)}
+
+\texttt{jarray.zeros(length, type)} \\
+
+\begin{center}
+\begin{tabular}{ | p{4cm} | p{5cm} | }
+\hline
+\textbf{Character Typecode} & \textbf{Corresponding Java Type} \\
+\hline
+z & boolean \\
+\hline
+ c & char \\ 
+ \hline
+ b & byte \\  
+ \hline
+h & short \\   
+ \hline
+ i & int \\
+ \hline
+ l & long \\
+ \hline
+ f & float \\
+ \hline
+ d & double \\
+ \hline
+\multicolumn{2}{ l }{*Python types can also be used, as shown in the example below} \\
+%\hline
+\end{tabular}
+\end{center} 
+
+\smallskip
+
+\begin{lstlisting}[language=Python]
+from jarray import array, zeros
+ 
+arr = array([1, 2, 3], 'i')
+arr_z = zeros(3, float)
+
+arr.append(4)
+for i in range(len(arr_z)):
+	arr_z[i] += 1
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python]
+arr = [1, 2, 3]
+arr_z = [0.0, 0.0, 0.0]
+
+arr.append(4)
+for i in range(len(arr_z)):
+	arr_z[i] += 1
+\end{lstlisting}
+
+
+\section{Syntax and Usage}
+This section covers each major OpenMP construct supported, along with the clauses that can be used in conjunction with them. The function will be briefly explained, along with any major differences from the original OpenMP version. Note that all directives are in the form of a Python comment that starts with \texttt{\#omp} (we omitted the ``pragma" present in the C/C++ OpenMP since it has no meaning in Python). Syntax examples are also provided.
+
+
+
+\subsection{Parallel}
+The \texttt{parallel} directive has the effect of spawning threads to run the subsequent code block in parallel. It is the only directive that the \texttt{num\_threads()} clause can be used with. If the \texttt{num\_threads()} is not included, then the value returned from \texttt{os.cpu\_count()} will be used by default. The \texttt{parallel} directive can also include any variable scoping clause or the reduction clause.
+
+\begin{lstlisting}[language=Python]
+from omp import *
+ 
+#omp parallel num_threads(2)
+	id = omp_get_thread_num()
+	print('Hello from thread: ', id)
+\end{lstlisting}
+
+
+
+\subsection{For}
+The \texttt{for} directive in OpenMP is a convenience directive for for-loop partitioning among threads. This directive splits the iterations among the available threads according to the schedule set by the \texttt{schedule()} clause (if not present, it will be set to static, with a chunk size of approximately the number of iterations divided by the number of threads, by default). Dynamic and guided scheduling is also supported. Because the for-loop construct in Python is really a for-each loop, we enforce a particular structure when using the \texttt{for} directive. The for-loop following a \texttt{for} directive must be of the form \texttt{for [single variable] in range([1, 2, or 3 parameters]):}. If one parameter (\texttt{n}) is passed to \texttt{range()}, then the returned range will be \texttt{[0, n-1]}. If two parameters are passed (\texttt{k}, and \texttt{n}), then the range will be \texttt{[k, n-1]}. Finally, if three parameters are passed (\texttt{k}, \texttt{n}, and \texttt{i}), then the range will be \texttt{[k, k+i, k+2i, k+3i, ..., n-1]}. This ensures that OpenMP for-loops will behave as close to C-like for-loops as possible.
+
+\begin{lstlisting}[language=Python]
+from omp import *
+ 
+#omp parallel num_threads(2)
+    #omp for schedule(dynamic, 5)
+        for i in range(0, 100, 2):
+            print('Iteration: ', i')
+\end{lstlisting}
+
+
+
+\subsection{Parallel For}
+The \texttt{parallel for} directive combines the functions of the previous two directives into a single directive. It is functionally identical to the \texttt{parallel} directive, directly followed by the \texttt{for} directive.
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+from omp import *
+ 
+#omp parallel for num_threads(2) schedule(guided, 10)
+	for i in range(1, 100):
+		print('Iteration: ', i)
+\end{lstlisting}
+\end{figure}
+
+ 
+ \subsection{Barrier}
+ The \texttt{barrier} directive is used for synchronization. It ensures that no thread will continue past the barrier until all threads have made it to the barrier. 
+  
+ \begin{lstlisting}[language=Python]
+from omp import *
+ 
+#omp parallel
+	print('first print statement')
+	#omp barrier
+	print('All threads have completed first print statement')
+\end{lstlisting} 
+
+
+
+ \subsection{Critical}
+ The \texttt{critical} directive protects critical sections within a parallel region. A critical section is any code that could result in a race condition if it is executed by multiple threads in parallel. The \texttt{critical} directive is used to serialize this portion of code so that only one thread may execute it at a time. 
+ 
+ \begin{lstlisting}[language=Python]
+from omp import *
+ 
+sum = 0
+#omp parallel for shared(sum)
+	for i in range(10):
+		#omp critical
+			sum += 1
+\end{lstlisting}
+
+
+
+\subsection{Reduction} 
+The \texttt{reduction} clause is a convenient method for assigning each thread a private variable, and then performing some aggregation operation across all of them at the end of the block and placing the result back in the variable with the same name from the outer scope. This works by providing a variable name and an operation as arguments to the clause. Then each thread can access the variable just like a private variable without worrying about synchronization. After the block executes, the result will automatically be placed into the original variable. The operations that are supported are as follows: +, -, *, \& (bit level AND), $|$ (bit level OR), \^{} (bit level XOR), \&\& (logical AND), $||$ (logical OR), max, and min.
+
+\begin{lstlisting}[language=Python]
+from omp import *
+ 
+sum = 0
+#omp parallel for reduction(+:sum)
+	for i in range(10):
+		sum += 1
+\end{lstlisting}
+
+
+
+ \subsection{Master/Single}
+ Currently, the \texttt{master} and \texttt{single} directives have the same effect. These directives ensure that only the thread with ID 0 will execute the following block. In a future update, we plan to differentiate between the two by allowing \texttt{single} blocks to be executed by the first thread that encounters the directive, regardless of whether or not it is thread 0, which is the behavior of the original OpenMP version.
+ 
+ \begin{lstlisting}[language=Python]
+from omp import *
+ 
+#omp parallel
+	print('printed by all threads')
+	#omp master
+		print('only printed by thread 0')
+	#omp single
+		print('only printed by thread 0')
+\end{lstlisting}
+ 
+ \section{Runtime API}
+All runtime functions exist in the omp module. The directory where this module exists is added to the python path automatically, so the user can import it normally. Currently our runtime API supports three function calls. The first is \texttt{omp\_get\_thread\_num()}. This function returns a unique ID corresponding to the thread that calls it. The IDs are always assigned starting with 0 (the master thread) and then incrementing by one for each additional thread created. Therefore, the programmer can assume that whatever threads are available in a given parallel region have IDs \texttt{0} through \texttt{p-1} where \texttt{p} is the number of threads executing the region.
+
+The second function we provide is \texttt{omp\_get\_num\_threads()}. This function returns the number of available threads executing a parallel region.
+
+Finally, \texttt{omp\_get\_wtime()} is a wrapper around the Python \texttt{time.time} function and returns the number of seconds since some arbitrary time in the past that is guaranteed not to change during the execution of the program. Below is a table summarizing each API call, along with an example showing how they can be used.
+
+\begin{center}
+\begin{tabular}{ | p{5cm} | p{9cm} | }
+\hline
+\textbf{API Call} & \textbf{Description} \\
+\hline
+ \texttt{omp\_get\_thread\_num()} & returns integer thread ID \\ 
+ \hline
+ \texttt{omp\_get\_num\_threads()} & returns integer representing the number of threads active in the current scope\\  
+ \hline
+ \texttt{omp\_get\_wtime()} & returns the number of seconds since some arbitrary time in the past \\   
+ \hline
+\end{tabular}
+\end{center}
+
+ \begin{lstlisting}[language=Python]
+from omp import *
+ 
+start = omp_get_wtime()
+#omp parallel num_threads(5)
+	print('printed by thread ', omp_get_thread_num(), ' of ', \ omp_get_num_threads())
+end = omp_get_wtime()
+print('parallel block took ', end - start, ' seconds to finish')
+\end{lstlisting}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

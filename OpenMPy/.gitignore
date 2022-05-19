@@ -1,0 +1,6 @@
+venv/
+.idea/
+ompy/antlr_generated/
+.jython_cache
+ompy/.jython_cache
+testing_input/.jython_cache
