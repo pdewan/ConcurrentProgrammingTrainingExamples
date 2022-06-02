@@ -1,0 +1,365 @@
+<Events startTimestamp="1652371045815" logVersion="1.0.0.202205120948">
+  <Command __id="669" _type="ShellCommand" date="Sat May 14 08:42:32 EDT 2022" starttimestamp="1652371045815" timestamp="161107078" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="671" _type="ShellCommand" date="Sat May 14 08:42:33 EDT 2022" starttimestamp="1652371045815" timestamp="161107192" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="673" _type="PauseCommand" date="Sat May 14 08:43:39 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="161173761">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[66569]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="672" _type="ShellCommand" date="Sat May 14 08:43:39 EDT 2022" starttimestamp="1652371045815" timestamp="161173761" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="675" _type="PauseCommand" date="Sat May 14 08:46:48 EDT 2022" range="2m-5m" starttimestamp="1652371045815" timestamp="161362502">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[188741]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="674" _type="ShellCommand" date="Sat May 14 08:46:48 EDT 2022" starttimestamp="1652371045815" timestamp="161362502" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="676" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.rename.element" date="Sat May 14 08:46:48 EDT 2022" starttimestamp="1652371045815" timestamp="161362521" />
+  <Command __id="678" _type="PauseCommand" date="Sat May 14 08:47:30 EDT 2022" range="30s-1m" starttimestamp="1652371045815" timestamp="161404509">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[41988]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="677" _type="ShellCommand" date="Sat May 14 08:47:30 EDT 2022" starttimestamp="1652371045815" timestamp="161404509" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="680" _type="PauseCommand" date="Sat May 14 08:49:08 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="161502939">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[98430]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="682" _type="MoveCaretCommand" caretOffset="298" date="Sat May 14 08:49:34 EDT 2022" docOffset="298" starttimestamp="1652371045815" timestamp="161528596" />
+  <Command __id="685" _type="PauseCommand" date="Sat May 14 08:49:42 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="161536390">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[7794]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[EclipseCommand]]></next>
+  </Command>
+  <Command __id="684" _type="EclipseCommand" commandID="org.eclipse.ui.project.closeProject" date="Sat May 14 08:49:42 EDT 2022" starttimestamp="1652371045815" timestamp="161536390" />
+  <Command __id="687" _type="PauseCommand" date="Sat May 14 08:51:32 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="161646975">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[110585]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="731" _type="ShellCommand" date="Sat May 14 09:08:51 EDT 2022" starttimestamp="1652371045815" timestamp="162685555" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="733" _type="EclipseCommand" commandID="org.eclipse.ui.file.import" date="Sat May 14 09:08:51 EDT 2022" starttimestamp="1652371045815" timestamp="162685587" />
+  <Command __id="735" _type="PauseCommand" date="Sat May 14 09:09:14 EDT 2022" range="20s-30s" starttimestamp="1652371045815" timestamp="162708755">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[23168]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="747" _type="ShellCommand" date="Sat May 14 09:10:29 EDT 2022" starttimestamp="1652371045815" timestamp="162783313" type="ECLIPSE_GAINED_FOCUS" />
+  <DocumentChange __id="570" _type="Insert" date="Fri May 13 02:11:08 EDT 2022" docASTNodeCount="47" docActiveCodeLength="250" docExpressionCount="29" docLength="294" length="3" offset="276" repeat="3" starttimestamp="1652371045815" timestamp="51223075" timestamp2="51223740">
+    <text><![CDATA[.cu]]></text>
+  </DocumentChange>
+  <DocumentChange __id="580" _type="Replace" date="Fri May 13 02:11:12 EDT 2022" docASTNodeCount="47" docActiveCodeLength="263" docExpressionCount="29" docLength="307" endLine="10" insertionLength="15" int_docASTNodeCount="47" int_docActiveCodeLength="248" int_docExpressionCount="28" int_docLength="292" length="2" offset="277" startLine="10" starttimestamp="1652371045815" timestamp="51226190">
+    <deletedText><![CDATA[cu]]></deletedText>
+    <insertedText><![CDATA[currentThread()]]></insertedText>
+  </DocumentChange>
+  <Command __id="750" _type="PauseCommand" date="Sat May 14 09:11:42 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="162857134">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[73821]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="751" _type="MoveCaretCommand" caretOffset="0" date="Sat May 14 09:11:43 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="162857279" />
+  <Command __id="749" _type="DiffBasedFileOpenCommand" date="Sat May 14 09:11:42 EDT 2022" projectName="OpenMPTraining" starttimestamp="1652371045815" timestamp="162857134">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="753" _type="PauseCommand" date="Sat May 14 09:12:08 EDT 2022" range="20s-30s" starttimestamp="1652371045815" timestamp="162882890">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[25611]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="754" _type="MoveCaretCommand" caretOffset="0" date="Sat May 14 09:12:08 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="162883054" />
+  <Command __id="752" _type="DiffBasedFileOpenCommand" date="Sat May 14 09:12:08 EDT 2022" projectName="OpenMPTraining" starttimestamp="1652371045815" timestamp="162882890">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_sequential.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="756" _type="PauseCommand" date="Sat May 14 09:12:15 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="162889849">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[6795]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="757" _type="MoveCaretCommand" caretOffset="0" date="Sat May 14 09:12:15 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="162889971" />
+  <Command __id="755" _type="DiffBasedFileOpenCommand" date="Sat May 14 09:12:15 EDT 2022" projectName="OpenMPTraining" starttimestamp="1652371045815" timestamp="162889849">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_local_var.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="759" _type="PauseCommand" date="Sat May 14 09:12:21 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="162895390">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[5419]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="760" _type="MoveCaretCommand" caretOffset="0" date="Sat May 14 09:12:21 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="162895517" />
+  <Command __id="762" _type="PauseCommand" date="Sat May 14 09:12:33 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="162907788">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[12271]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="761" _type="ShellCommand" date="Sat May 14 09:12:33 EDT 2022" starttimestamp="1652371045815" timestamp="162907788" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="763" _type="ShellCommand" date="Sat May 14 09:12:33 EDT 2022" starttimestamp="1652371045815" timestamp="162907906" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="764" _type="ShellCommand" date="Sat May 14 09:12:33 EDT 2022" starttimestamp="1652371045815" timestamp="162908003" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="766" _type="PauseCommand" date="Sat May 14 09:12:49 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="162923419">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[15416]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="774" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:13:13 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="162947460" type="Run" />
+  <Command __id="776" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:13:13 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="162947486" type="Run" />
+  <Command __id="777" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:13:13 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="162948010" type="Run" />
+  <Command __id="778" _type="ProgramExecutionEvent" className="(Unknown)" date="Sat May 14 09:13:13 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="162948018" type="Debug" />
+  <Command __id="779" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:13:13 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="162948018" type="Run" />
+  <Command __id="772" _type="DiffBasedFileOpenCommand" date="Sat May 14 09:12:58 EDT 2022" projectName="null" starttimestamp="1652371045815" timestamp="162933072">
+    <filePath><![CDATA[null]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="781" _type="PauseCommand" date="Sat May 14 09:13:24 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="162958229">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[ProgramExecutionEvent]]></prev>
+    <pause><![CDATA[10211]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="782" _type="MoveCaretCommand" caretOffset="0" date="Sat May 14 09:13:24 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="162958409" />
+  <Command __id="784" _type="PauseCommand" date="Sat May 14 09:13:32 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="162966465">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[8056]]></pause>
+    <nextType><![CDATA[Move Caret]]></nextType>
+    <next><![CDATA[MoveCaretCommand]]></next>
+  </Command>
+  <Command __id="783" _type="MoveCaretCommand" caretOffset="304" date="Sat May 14 09:13:32 EDT 2022" docOffset="304" starttimestamp="1652371045815" timestamp="162966465" />
+  <Command __id="786" _type="PauseCommand" date="Sat May 14 09:14:06 EDT 2022" range="30s-1m" starttimestamp="1652371045815" timestamp="163001150">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[34685]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="785" _type="ShellCommand" date="Sat May 14 09:14:06 EDT 2022" starttimestamp="1652371045815" timestamp="163001150" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="787" _type="ShellCommand" date="Sat May 14 09:14:07 EDT 2022" starttimestamp="1652371045815" timestamp="163001294" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="788" _type="ShellCommand" date="Sat May 14 09:14:07 EDT 2022" starttimestamp="1652371045815" timestamp="163001363" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="790" _type="PauseCommand" date="Sat May 14 09:14:16 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="163010517">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[9154]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="811" _type="ShellCommand" date="Sat May 14 09:14:53 EDT 2022" starttimestamp="1652371045815" timestamp="163047351" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="795" _type="DiffBasedFileOpenCommand" date="Sat May 14 09:14:23 EDT 2022" projectName="null" starttimestamp="1652371045815" timestamp="163017380">
+    <filePath><![CDATA[null]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="816" _type="PauseCommand" date="Sat May 14 09:15:25 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="163079974">
+    <prevType><![CDATA[Open File]]></prevType>
+    <prev><![CDATA[DiffBasedFileOpenCommand]]></prev>
+    <pause><![CDATA[8808]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="818" _type="PauseCommand" date="Sat May 14 09:16:06 EDT 2022" range="30s-1m" starttimestamp="1652371045815" timestamp="163120678">
+    <prevType><![CDATA[Open File]]></prevType>
+    <prev><![CDATA[DiffBasedFileOpenCommand]]></prev>
+    <pause><![CDATA[40704]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="817" _type="ShellCommand" date="Sat May 14 09:16:06 EDT 2022" starttimestamp="1652371045815" timestamp="163120678" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="819" _type="ShellCommand" date="Sat May 14 09:16:06 EDT 2022" starttimestamp="1652371045815" timestamp="163120794" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="820" _type="ShellCommand" date="Sat May 14 09:16:06 EDT 2022" starttimestamp="1652371045815" timestamp="163120869" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="822" _type="PauseCommand" date="Sat May 14 09:16:25 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="163140073">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[19204]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="821" _type="ShellCommand" date="Sat May 14 09:16:25 EDT 2022" starttimestamp="1652371045815" timestamp="163140073" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="823" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:16:26 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="163140563" type="Run" />
+  <Command __id="824" _type="RunCommand" className="/OpenMPTraining" date="Sat May 14 09:16:26 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="163140563" type="Run" />
+  <Command __id="825" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:16:26 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="163140571" type="Run" />
+  <Command __id="826" _type="ProgramExecutionEvent" className="(Unknown)" date="Sat May 14 09:16:26 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="163140571" type="Debug" />
+  <Command __id="827" _type="ProgramExecutionEvent" className="/OpenMPTraining" date="Sat May 14 09:16:26 EDT 2022" kind="HitBreakPoint" projectName="(Unknown)" starttimestamp="1652371045815" timestamp="163140572" type="Run" />
+  <Command __id="828" _type="ConsoleOutput" date="Sat May 14 09:16:26 EDT 2022" overflow="false" starttimestamp="1652371045815" timestamp="163141114" type="ConsoleOutput">
+    <outputString><![CDATA[sum_sequential
+Sum: 499500
+Took: 0
+thread:0 lastIndex:999
+_____________________________
+sum_parallel_for_reduction
+Sum: 499500
+Took: 0
+thread:0 lastIndex:999
+_____________________________
+sum_parallel_for_local_var
+Sum: 499500
+Took: 0
+thread:0 lastIndex:999
+_____________________________
+sum_parallel
+Sum: 499500
+Took: 0
+thread:0 lastIndex:999
+_____________________________
+]]></outputString>
+    <diff><![CDATA[[Diff(DELETE,"¶CONFIGURE SUCCESSFUL in 8s"), Diff(INSERT,"sum_sequential¶Sum: 499500¶Took: 0¶thread:0 lastIndex:999¶_____________________________¶sum_parallel_for_reduction¶Sum: 499500¶Took: 0¶thread:0 lastIndex:999¶_____________________________¶sum_parallel_for_local_var¶Sum: 499500¶Took: 0¶thread:0 lastIndex:999¶_____________________________¶sum_parallel¶Sum: 499500¶Took: 0¶thread:0 lastIndex:999¶_____________________________"), Diff(EQUAL,"¶")]]]></diff>
+  </Command>
+  <Command __id="830" _type="PauseCommand" date="Sat May 14 09:16:48 EDT 2022" range="20s-30s" starttimestamp="1652371045815" timestamp="163162234">
+    <prevType><![CDATA[IO]]></prevType>
+    <prev><![CDATA[ConsoleOutput]]></prev>
+    <pause><![CDATA[21120]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="829" _type="ShellCommand" date="Sat May 14 09:16:48 EDT 2022" starttimestamp="1652371045815" timestamp="163162234" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="832" _type="PauseCommand" date="Sat May 14 09:17:05 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="163179740">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[17506]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="831" _type="ShellCommand" date="Sat May 14 09:17:05 EDT 2022" starttimestamp="1652371045815" timestamp="163179740" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="834" _type="PauseCommand" date="Sat May 14 09:18:42 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="163276386">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[96646]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="841" _type="ShellCommand" date="Sat May 14 09:23:16 EDT 2022" starttimestamp="1652371045815" timestamp="163551086" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="843" _type="ShellCommand" date="Sat May 14 09:23:16 EDT 2022" starttimestamp="1652371045815" timestamp="163551138" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="845" _type="PauseCommand" date="Sat May 14 09:26:08 EDT 2022" range="2m-5m" starttimestamp="1652371045815" timestamp="163722784">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[171646]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25604" _type="ShellCommand" date="Wed May 18 23:24:13 EDT 2022" starttimestamp="1652371045815" timestamp="559608031" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25607" _type="PauseCommand" date="Wed May 18 23:25:33 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="559687297">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[79266]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25606" _type="ShellCommand" date="Wed May 18 23:25:33 EDT 2022" starttimestamp="1652371045815" timestamp="559687297" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25609" _type="PauseCommand" date="Wed May 18 23:25:45 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="559699659">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[12362]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25608" _type="ShellCommand" date="Wed May 18 23:25:45 EDT 2022" starttimestamp="1652371045815" timestamp="559699659" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25610" _type="EclipseCommand" commandID="org.eclipse.ui.file.properties" date="Wed May 18 23:25:45 EDT 2022" starttimestamp="1652371045815" timestamp="559699693" />
+  <Command __id="25612" _type="PauseCommand" date="Wed May 18 23:25:53 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="559707554">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[7861]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25611" _type="ShellCommand" date="Wed May 18 23:25:53 EDT 2022" starttimestamp="1652371045815" timestamp="559707554" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25614" _type="PauseCommand" date="Wed May 18 23:27:06 EDT 2022" range="1m-2m" starttimestamp="1652371045815" timestamp="559780868">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[73314]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25613" _type="ShellCommand" date="Wed May 18 23:27:06 EDT 2022" starttimestamp="1652371045815" timestamp="559780868" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25616" _type="PauseCommand" date="Wed May 18 23:27:23 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="559797340">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[16472]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[EclipseCommand]]></next>
+  </Command>
+  <Command __id="25615" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Wed May 18 23:27:23 EDT 2022" starttimestamp="1652371045815" timestamp="559797340" />
+  <Command __id="25618" _type="PauseCommand" date="Wed May 18 23:27:24 EDT 2022" range="1s-2s" starttimestamp="1652371045815" timestamp="559798960">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[1620]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25617" _type="ShellCommand" date="Wed May 18 23:27:24 EDT 2022" starttimestamp="1652371045815" timestamp="559798960" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25620" _type="PauseCommand" date="Wed May 18 23:27:28 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="559802639">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[3679]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25619" _type="ShellCommand" date="Wed May 18 23:27:28 EDT 2022" starttimestamp="1652371045815" timestamp="559802639" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25622" _type="PauseCommand" date="Wed May 18 23:27:34 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="559808997">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[6358]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[EclipseCommand]]></next>
+  </Command>
+  <Command __id="25621" _type="EclipseCommand" commandID="org.eclipse.ui.file.refresh" date="Wed May 18 23:27:34 EDT 2022" starttimestamp="1652371045815" timestamp="559808997" />
+  <Command __id="25624" _type="PauseCommand" date="Wed May 18 23:27:40 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="559814286">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[5289]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25623" _type="ShellCommand" date="Wed May 18 23:27:40 EDT 2022" starttimestamp="1652371045815" timestamp="559814286" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25626" _type="PauseCommand" date="Wed May 18 23:28:17 EDT 2022" range="30s-1m" starttimestamp="1652371045815" timestamp="559851811">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[37525]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25625" _type="ShellCommand" date="Wed May 18 23:28:17 EDT 2022" starttimestamp="1652371045815" timestamp="559851811" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25628" _type="PauseCommand" date="Wed May 18 23:28:28 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="559862656">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[10845]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25627" _type="ShellCommand" date="Wed May 18 23:28:28 EDT 2022" starttimestamp="1652371045815" timestamp="559862656" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25630" _type="PauseCommand" date="Wed May 18 23:34:23 EDT 2022" range="5m-10m" starttimestamp="1652371045815" timestamp="560217468">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[354812]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+</Events>

@@ -1,0 +1,494 @@
+<Events startTimestamp="1646004433961" logVersion="1.0.0.201911281918">
+  <Command __id="0" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:28:04 EST 2022" docASTNodeCount="1" docActiveCodeLength="804" docExpressionCount="0" docLength="860" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="50317">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_local_var.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel_for_local_var(double* array, int size)
+{
+	cout << "sum_parallel_for_local_var\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < size; i++) {
+			sum += array[i];
+			recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+	
+}
+
+void sum_parallel_for_local_var_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel_for_local_var(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_for_local_var_driver();
+//}
+]]></snapshot>
+  </Command>
+  <Command __id="1" _type="MoveCaretCommand" caretOffset="274" date="Sun Feb 27 18:28:04 EST 2022" docOffset="274" starttimestamp="1646004433961" timestamp="50409" />
+  <Command __id="2" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:28:25 EST 2022" docASTNodeCount="1" docActiveCodeLength="801" docExpressionCount="0" docLength="857" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="71399">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_reduction.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel_for_reduction(double* array, int size) {
+	cout << "sum_parallel_for_reduction\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < size; i++) {
+		sum += array[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_for_reduction_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel_for_reduction(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_for_reduction_driver();
+//}
+]]></snapshot>
+  </Command>
+  <DocumentChange __id="3" _type="Replace" date="Sun Feb 27 18:28:25 EST 2022" docASTNodeCount="1" docActiveCodeLength="801" docExpressionCount="0" docLength="857" endLine="40" insertionLength="857" int_docASTNodeCount="1" int_docActiveCodeLength="0" int_docExpressionCount="0" int_docLength="0" length="857" offset="0" startLine="0" starttimestamp="1646004433961" timestamp="71633">
+    <deletedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel_for_reduction(double* array, int size) {
+	cout << "sum_parallel_for_reduction\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < size; i++) {
+		sum += array[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_for_reduction_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel_for_reduction(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_for_reduction_driver();
+//}
+]]></deletedText>
+    <insertedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel_for_reduction(double* array, int size) {
+	cout << "sum_parallel_for_reduction\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < size; i++) {
+		sum += array[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_for_reduction_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel_for_reduction(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_for_reduction_driver();
+//}
+]]></insertedText>
+  </DocumentChange>
+  <Command __id="4" _type="MoveCaretCommand" caretOffset="0" date="Sun Feb 27 18:28:25 EST 2022" docOffset="0" starttimestamp="1646004433961" timestamp="71697" />
+  <Command __id="5" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:28:32 EST 2022" docASTNodeCount="1" docActiveCodeLength="762" docExpressionCount="0" docLength="804" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="78684">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel(double* aNumberArray, int aSize) {
+	cout << "sum_parallel\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		sum += aNumberArray[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_driver();
+//}
+
+]]></snapshot>
+  </Command>
+  <DocumentChange __id="6" _type="Replace" date="Sun Feb 27 18:28:32 EST 2022" docASTNodeCount="1" docActiveCodeLength="762" docExpressionCount="0" docLength="804" endLine="41" insertionLength="804" int_docASTNodeCount="1" int_docActiveCodeLength="0" int_docExpressionCount="0" int_docLength="0" length="804" offset="0" startLine="0" starttimestamp="1646004433961" timestamp="78899">
+    <deletedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel(double* aNumberArray, int aSize) {
+	cout << "sum_parallel\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		sum += aNumberArray[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_driver();
+//}
+
+]]></deletedText>
+    <insertedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumberArray, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_parallel(double* aNumberArray, int aSize) {
+	cout << "sum_parallel\n";
+
+	double start = omp_get_wtime();
+
+	double sum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		sum += aNumberArray[i];
+		recordThreadIndex(i);
+	}
+
+	double end = omp_get_wtime();
+
+	printSumWithTimes(sum, start, end);
+
+}
+
+void sum_parallel_main() {
+	double* aNumberArray = new double[SIZE];
+	initArrayAndTracing(aNumberArray, SIZE);
+	sum_parallel(aNumberArray, SIZE);
+	printThreadLastIndices();
+}
+
+//int main() {
+//	sum_parallel_driver();
+//}
+
+]]></insertedText>
+  </DocumentChange>
+  <Command __id="7" _type="MoveCaretCommand" caretOffset="0" date="Sun Feb 27 18:28:32 EST 2022" docOffset="0" starttimestamp="1646004433961" timestamp="78939" />
+  <Command __id="10" _type="MoveCaretCommand" caretOffset="0" date="Sun Feb 27 18:28:39 EST 2022" docOffset="0" starttimestamp="1646004433961" timestamp="85118" />
+  <Command __id="11" _type="MoveCaretCommand" caretOffset="693" date="Sun Feb 27 18:28:46 EST 2022" docOffset="693" starttimestamp="1646004433961" timestamp="92163" />
+  <Command __id="12" _type="MoveCaretCommand" caretOffset="693" date="Sun Feb 27 18:28:52 EST 2022" docOffset="693" starttimestamp="1646004433961" timestamp="98937" />
+  <Command __id="13" _type="MoveCaretCommand" caretOffset="765" date="Sun Feb 27 18:28:57 EST 2022" docOffset="765" starttimestamp="1646004433961" timestamp="103049" />
+  <Command __id="14" _type="MoveCaretCommand" caretOffset="765" date="Sun Feb 27 18:28:57 EST 2022" docOffset="765" starttimestamp="1646004433961" timestamp="103491" />
+  <Command __id="15" _type="ShellCommand" date="Sun Feb 27 18:29:09 EST 2022" starttimestamp="1646004433961" timestamp="115204" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="16" _type="ShellCommand" date="Sun Feb 27 18:29:09 EST 2022" starttimestamp="1646004433961" timestamp="115356" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="17" _type="EclipseCommand" commandID="org.eclipse.cdt.debug.ui.localCShortcut.run" date="Sun Feb 27 18:29:09 EST 2022" starttimestamp="1646004433961" timestamp="115393" />
+  <Command __id="18" _type="ShellCommand" date="Sun Feb 27 18:29:13 EST 2022" starttimestamp="1646004433961" timestamp="119612" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="19" _type="ShellCommand" date="Sun Feb 27 18:29:18 EST 2022" starttimestamp="1646004433961" timestamp="124056" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="20" _type="ShellCommand" date="Sun Feb 27 18:29:18 EST 2022" starttimestamp="1646004433961" timestamp="124166" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="8" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:28:38 EST 2022" docASTNodeCount="1" docActiveCodeLength="767" docExpressionCount="0" docLength="767" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="84812">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_sequential.cpp]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumbers, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_sequential(double* aNumbers, int aSize) {
+
+	cout << "sum_sequential\n";
+
+	double aStartTime = omp_get_wtime();
+
+	double aSum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		aSum += aNumbers[i];
+		recordThreadIndex(i);
+	}
+
+	double anEndTime = omp_get_wtime();
+
+	printSumWithTimes(aSum, aStartTime, anEndTime);
+}
+
+void sum_sequential_main() {
+	double* aNumbers = new double[SIZE];
+	initArrayAndTracing(aNumbers, SIZE);
+	sum_sequential(aNumbers, SIZE);
+	printThreadLastIndices();
+}
+
+]]></snapshot>
+  </Command>
+  <DocumentChange __id="9" _type="Replace" date="Sun Feb 27 18:28:39 EST 2022" docASTNodeCount="1" docActiveCodeLength="767" docExpressionCount="0" docLength="767" endLine="37" insertionLength="767" int_docASTNodeCount="1" int_docActiveCodeLength="0" int_docExpressionCount="0" int_docLength="0" length="767" offset="0" startLine="0" starttimestamp="1646004433961" timestamp="85079">
+    <deletedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumbers, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_sequential(double* aNumbers, int aSize) {
+
+	cout << "sum_sequential\n";
+
+	double aStartTime = omp_get_wtime();
+
+	double aSum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		aSum += aNumbers[i];
+		recordThreadIndex(i);
+	}
+
+	double anEndTime = omp_get_wtime();
+
+	printSumWithTimes(aSum, aStartTime, anEndTime);
+}
+
+void sum_sequential_main() {
+	double* aNumbers = new double[SIZE];
+	initArrayAndTracing(aNumbers, SIZE);
+	sum_sequential(aNumbers, SIZE);
+	printThreadLastIndices();
+}
+
+]]></deletedText>
+    <insertedText><![CDATA[#include <iostream>
+#include <omp.h>
+using namespace std;
+
+void initArrayAndTracing (double* aNumbers, int aSize);
+void printThreadLastIndices();
+void printSumWithTimes(int sum, int start, int end);
+void printNumThreads();
+void recordThreadIndex(int index);
+
+const int SIZE = 1000;
+
+void sum_sequential(double* aNumbers, int aSize) {
+
+	cout << "sum_sequential\n";
+
+	double aStartTime = omp_get_wtime();
+
+	double aSum = 0;
+
+	for (int i = 0; i < aSize; i++) {
+		aSum += aNumbers[i];
+		recordThreadIndex(i);
+	}
+
+	double anEndTime = omp_get_wtime();
+
+	printSumWithTimes(aSum, aStartTime, anEndTime);
+}
+
+void sum_sequential_main() {
+	double* aNumbers = new double[SIZE];
+	initArrayAndTracing(aNumbers, SIZE);
+	sum_sequential(aNumbers, SIZE);
+	printThreadLastIndices();
+}
+
+]]></insertedText>
+  </DocumentChange>
+  <Command __id="21" _type="ShellCommand" date="Sun Feb 27 18:29:46 EST 2022" starttimestamp="1646004433961" timestamp="152634" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="22" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:30:00 EST 2022" docASTNodeCount="1" docActiveCodeLength="804" docExpressionCount="0" docLength="860" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="166632">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_local_var.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumberArray, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_parallel_for_local_var(double* array, int size)¶{¶	cout << "sum_parallel_for_local_var\n";¶¶	double start = omp_get_wtime();¶¶	double sum = 0;¶¶	for (int i = 0; i < size; i++) {¶			sum += array[i];¶			recordThreadIndex(i);¶	}¶¶	double end = omp_get_wtime();¶¶	printSumWithTimes(sum, start, end);¶	¶}¶¶void sum_parallel_for_local_var_main() {¶	double* aNumberArray = new double[SIZE];¶	initArrayAndTracing(aNumberArray, SIZE);¶	sum_parallel_for_local_var(aNumberArray, SIZE);¶	printThreadLastIndices();¶}¶¶//int main() {¶//	sum_parallel_for_local_var_driver();¶//}¶")]]]></diff>
+  </Command>
+  <Command __id="23" _type="MoveCaretCommand" caretOffset="274" date="Sun Feb 27 18:30:00 EST 2022" docOffset="274" starttimestamp="1646004433961" timestamp="166822" />
+  <Command __id="25" _type="MoveCaretCommand" caretOffset="765" date="Sun Feb 27 18:30:30 EST 2022" docOffset="765" starttimestamp="1646004433961" timestamp="196525" />
+  <Command __id="26" _type="MoveCaretCommand" caretOffset="597" date="Sun Feb 27 18:31:01 EST 2022" docOffset="597" starttimestamp="1646004433961" timestamp="228002" />
+  <Command __id="27" _type="MoveCaretCommand" caretOffset="65" date="Sun Feb 27 18:31:17 EST 2022" docOffset="65" starttimestamp="1646004433961" timestamp="243641" />
+  <Command __id="28" _type="SelectTextCommand" caretOffset="83" date="Sun Feb 27 18:31:17 EST 2022" end="83" start="64" starttimestamp="1646004433961" timestamp="243883" />
+  <Command __id="29" _type="CopyCommand" date="Sun Feb 27 18:31:19 EST 2022" starttimestamp="1646004433961" timestamp="245042" />
+  <Command __id="30" _type="ShellCommand" date="Sun Feb 27 18:31:26 EST 2022" starttimestamp="1646004433961" timestamp="252407" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="24" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:30:30 EST 2022" docASTNodeCount="1" docActiveCodeLength="767" docExpressionCount="0" docLength="767" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="196347">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_sequential.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumbers, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_sequential(double* aNumbers, int aSize) {¶¶	cout << "sum_sequential\n";¶¶	double aStartTime = omp_get_wtime();¶¶	double aSum = 0;¶¶	for (int i = 0; i < aSize; i++) {¶		aSum += aNumbers[i];¶		recordThreadIndex(i);¶	}¶¶	double anEndTime = omp_get_wtime();¶¶	printSumWithTimes(aSum, aStartTime, anEndTime);¶}¶¶void sum_sequential_main() {¶	double* aNumbers = new double[SIZE];¶	initArrayAndTracing(aNumbers, SIZE);¶	sum_sequential(aNumbers, SIZE);¶	printThreadLastIndices();¶}¶¶")]]]></diff>
+  </Command>
+  <Command __id="32" _type="ShellCommand" date="Sun Feb 27 18:31:32 EST 2022" starttimestamp="1646004433961" timestamp="258178" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="33" _type="EclipseCommand" commandID="org.eclipse.search.ui.openFileSearchPage" date="Sun Feb 27 18:31:32 EST 2022" starttimestamp="1646004433961" timestamp="258255" />
+  <Command __id="34" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:31:57 EST 2022" docASTNodeCount="1" docActiveCodeLength="804" docExpressionCount="0" docLength="860" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="283931">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_local_var.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumberArray, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_parallel_for_local_var(double* array, int size)¶{¶	cout << "sum_parallel_for_local_var\n";¶¶	double start = omp_get_wtime();¶¶	double sum = 0;¶¶	for (int i = 0; i < size; i++) {¶			sum += array[i];¶			recordThreadIndex(i);¶	}¶¶	double end = omp_get_wtime();¶¶	printSumWithTimes(sum, start, end);¶	¶}¶¶void sum_parallel_for_local_var_main() {¶	double* aNumberArray = new double[SIZE];¶	initArrayAndTracing(aNumberArray, SIZE);¶	sum_parallel_for_local_var(aNumberArray, SIZE);¶	printThreadLastIndices();¶}¶¶//int main() {¶//	sum_parallel_for_local_var_driver();¶//}¶")]]]></diff>
+  </Command>
+  <Command __id="35" _type="MoveCaretCommand" caretOffset="274" date="Sun Feb 27 18:31:58 EST 2022" docOffset="274" starttimestamp="1646004433961" timestamp="284089" />
+  <Command __id="36" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:32:11 EST 2022" docASTNodeCount="1" docActiveCodeLength="801" docExpressionCount="0" docLength="857" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="297295">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_reduction.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumberArray, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_parallel_for_reduction(double* array, int size) {¶	cout << "sum_parallel_for_reduction\n";¶¶	double start = omp_get_wtime();¶¶	double sum = 0;¶¶	for (int i = 0; i < size; i++) {¶		sum += array[i];¶		recordThreadIndex(i);¶	}¶¶	double end = omp_get_wtime();¶¶	printSumWithTimes(sum, start, end);¶¶}¶¶void sum_parallel_for_reduction_main() {¶	double* aNumberArray = new double[SIZE];¶	initArrayAndTracing(aNumberArray, SIZE);¶	sum_parallel_for_reduction(aNumberArray, SIZE);¶	printThreadLastIndices();¶}¶¶//int main() {¶//	sum_parallel_for_reduction_driver();¶//}¶")]]]></diff>
+  </Command>
+  <Command __id="37" _type="MoveCaretCommand" caretOffset="0" date="Sun Feb 27 18:32:11 EST 2022" docOffset="0" starttimestamp="1646004433961" timestamp="297573" />
+  <Command __id="38" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:32:15 EST 2022" docASTNodeCount="1" docActiveCodeLength="762" docExpressionCount="0" docLength="804" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="301883">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumberArray, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_parallel(double* aNumberArray, int aSize) {¶	cout << "sum_parallel\n";¶¶	double start = omp_get_wtime();¶¶	double sum = 0;¶¶	for (int i = 0; i < aSize; i++) {¶		sum += aNumberArray[i];¶		recordThreadIndex(i);¶	}¶¶	double end = omp_get_wtime();¶¶	printSumWithTimes(sum, start, end);¶¶}¶¶void sum_parallel_main() {¶	double* aNumberArray = new double[SIZE];¶	initArrayAndTracing(aNumberArray, SIZE);¶	sum_parallel(aNumberArray, SIZE);¶	printThreadLastIndices();¶}¶¶//int main() {¶//	sum_parallel_driver();¶//}¶¶")]]]></diff>
+  </Command>
+  <Command __id="39" _type="MoveCaretCommand" caretOffset="0" date="Sun Feb 27 18:32:16 EST 2022" docOffset="0" starttimestamp="1646004433961" timestamp="302090" />
+  <Command __id="44" _type="ShellCommand" date="Sun Feb 27 18:32:47 EST 2022" starttimestamp="1646004433961" timestamp="333472" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="49" _type="ShellCommand" date="Sun Feb 27 18:33:28 EST 2022" starttimestamp="1646004433961" timestamp="374754" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="40" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:32:20 EST 2022" docASTNodeCount="1" docActiveCodeLength="767" docExpressionCount="0" docLength="767" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="306165">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_sequential.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumbers, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_sequential(double* aNumbers, int aSize) {¶¶	cout << "sum_sequential\n";¶¶	double aStartTime = omp_get_wtime();¶¶	double aSum = 0;¶¶	for (int i = 0; i < aSize; i++) {¶		aSum += aNumbers[i];¶		recordThreadIndex(i);¶	}¶¶	double anEndTime = omp_get_wtime();¶¶	printSumWithTimes(aSum, aStartTime, anEndTime);¶}¶¶void sum_sequential_main() {¶	double* aNumbers = new double[SIZE];¶	initArrayAndTracing(aNumbers, SIZE);¶	sum_sequential(aNumbers, SIZE);¶	printThreadLastIndices();¶}¶¶")]]]></diff>
+  </Command>
+  <Command __id="53" _type="ShellCommand" date="Sun Feb 27 18:35:18 EST 2022" starttimestamp="1646004433961" timestamp="484251" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="54" _type="EclipseCommand" commandID="org.eclipse.cdt.make.ui.targetBuildLastCommand" date="Sun Feb 27 18:35:18 EST 2022" starttimestamp="1646004433961" timestamp="484271" />
+  <Command __id="56" _type="MoveCaretCommand" caretOffset="274" date="Sun Feb 27 18:35:21 EST 2022" docOffset="274" starttimestamp="1646004433961" timestamp="487491" />
+  <Command __id="55" _type="DiffBasedFileOpenCommand" date="Sun Feb 27 18:35:21 EST 2022" docASTNodeCount="1" docActiveCodeLength="804" docExpressionCount="0" docLength="860" projectName="OpenMPTraining" starttimestamp="1646004433961" timestamp="487322">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\OpenMPTrainingC++\src\sum_parallel_for_local_var.cpp]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"#include <iostream>¶#include <omp.h>¶using namespace std;¶¶void initArrayAndTracing (double* aNumberArray, int aSize);¶void printThreadLastIndices();¶void printSumWithTimes(int sum, int start, int end);¶void printNumThreads();¶void recordThreadIndex(int index);¶¶const int SIZE = 1000;¶¶void sum_parallel_for_local_var(double* array, int size)¶{¶	cout << "sum_parallel_for_local_var\n";¶¶	double start = omp_get_wtime();¶¶	double sum = 0;¶¶	for (int i = 0; i < size; i++) {¶			sum += array[i];¶			recordThreadIndex(i);¶	}¶¶	double end = omp_get_wtime();¶¶	printSumWithTimes(sum, start, end);¶	¶}¶¶void sum_parallel_for_local_var_main() {¶	double* aNumberArray = new double[SIZE];¶	initArrayAndTracing(aNumberArray, SIZE);¶	sum_parallel_for_local_var(aNumberArray, SIZE);¶	printThreadLastIndices();¶}¶¶//int main() {¶//	sum_parallel_for_local_var_driver();¶//}¶")]]]></diff>
+  </Command>
+  <Command __id="57" _type="MoveCaretCommand" caretOffset="554" date="Sun Feb 27 18:35:22 EST 2022" docOffset="554" starttimestamp="1646004433961" timestamp="488582" />
+  <Command __id="58" _type="MoveCaretCommand" caretOffset="554" date="Sun Feb 27 18:35:23 EST 2022" docOffset="554" starttimestamp="1646004433961" timestamp="489286" />
+  <Command __id="60" _type="MoveCaretCommand" caretOffset="301" date="Sun Feb 27 18:35:30 EST 2022" docOffset="301" starttimestamp="1646004433961" timestamp="496735" />
+  <Command __id="61" _type="ShellCommand" date="Sun Feb 27 18:35:39 EST 2022" starttimestamp="1646004433961" timestamp="505188" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="62" _type="ShellCommand" date="Sun Feb 27 18:35:39 EST 2022" starttimestamp="1646004433961" timestamp="505293" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="63" _type="ShellCommand" date="Sun Feb 27 18:35:39 EST 2022" starttimestamp="1646004433961" timestamp="505340" type="ECLIPSE_LOST_FOCUS" />

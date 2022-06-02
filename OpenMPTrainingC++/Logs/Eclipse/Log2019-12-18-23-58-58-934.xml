@@ -1,0 +1,34 @@
+<Events startTimestamp="1576731538934" logVersion="1.0.0.201911281918">
+  <Command __id="1" _type="ShellCommand" date="Wed Dec 18 23:59:24 EST 2019" starttimestamp="1576731538934" timestamp="25953" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="2" _type="ShellCommand" date="Wed Dec 18 23:59:27 EST 2019" starttimestamp="1576731538934" timestamp="28462" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="3" _type="ShellCommand" date="Wed Dec 18 23:59:29 EST 2019" starttimestamp="1576731538934" timestamp="30121" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="4" _type="ShellCommand" date="Thu Dec 19 00:00:02 EST 2019" starttimestamp="1576731538934" timestamp="63921" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5" _type="ShellCommand" date="Thu Dec 19 00:03:11 EST 2019" starttimestamp="1576731538934" timestamp="252813" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="6" _type="ShellCommand" date="Thu Dec 19 00:03:15 EST 2019" starttimestamp="1576731538934" timestamp="256886" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="7" _type="ShellCommand" date="Thu Dec 19 00:03:37 EST 2019" starttimestamp="1576731538934" timestamp="278139" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="8" _type="ShellCommand" date="Thu Dec 19 00:03:42 EST 2019" starttimestamp="1576731538934" timestamp="283626" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="9" _type="ShellCommand" date="Thu Dec 19 00:03:55 EST 2019" starttimestamp="1576731538934" timestamp="296265" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="10" _type="ShellCommand" date="Thu Dec 19 00:03:57 EST 2019" starttimestamp="1576731538934" timestamp="298752" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="11" _type="ShellCommand" date="Thu Dec 19 00:03:57 EST 2019" starttimestamp="1576731538934" timestamp="298898" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="12" _type="ShellCommand" date="Thu Dec 19 00:04:04 EST 2019" starttimestamp="1576731538934" timestamp="305575" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="13" _type="ShellCommand" date="Thu Dec 19 00:14:46 EST 2019" starttimestamp="1576731538934" timestamp="947564" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="14" _type="ShellCommand" date="Thu Dec 19 00:14:58 EST 2019" starttimestamp="1576731538934" timestamp="959145" type="ECLIPSE_MINIMIZED" />
+  <Command __id="15" _type="ShellCommand" date="Thu Dec 19 00:14:58 EST 2019" starttimestamp="1576731538934" timestamp="959152" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="16" _type="ShellCommand" date="Thu Dec 19 03:18:28 EST 2019" starttimestamp="1576731538934" timestamp="11969833" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="17" _type="ShellCommand" date="Thu Dec 19 03:18:29 EST 2019" starttimestamp="1576731538934" timestamp="11970159" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="18" _type="ShellCommand" date="Thu Dec 19 03:18:33 EST 2019" starttimestamp="1576731538934" timestamp="11974613" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="19" _type="ShellCommand" date="Thu Dec 19 03:19:43 EST 2019" starttimestamp="1576731538934" timestamp="12044403" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="20" _type="ShellCommand" date="Thu Dec 19 03:19:48 EST 2019" starttimestamp="1576731538934" timestamp="12049585" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="21" _type="ShellCommand" date="Thu Dec 19 03:19:59 EST 2019" starttimestamp="1576731538934" timestamp="12060766" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="22" _type="ShellCommand" date="Thu Dec 19 03:20:02 EST 2019" starttimestamp="1576731538934" timestamp="12063807" type="ECLIPSE_MINIMIZED" />
+  <Command __id="23" _type="ShellCommand" date="Thu Dec 19 03:20:02 EST 2019" starttimestamp="1576731538934" timestamp="12063822" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="24" _type="ShellCommand" date="Thu Dec 19 03:24:25 EST 2019" starttimestamp="1576731538934" timestamp="12326769" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="25" _type="ShellCommand" date="Thu Dec 19 03:24:25 EST 2019" starttimestamp="1576731538934" timestamp="12326844" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="26" _type="ShellCommand" date="Thu Dec 19 03:24:43 EST 2019" starttimestamp="1576731538934" timestamp="12344246" type="ECLIPSE_MINIMIZED" />
+  <Command __id="27" _type="ShellCommand" date="Thu Dec 19 03:24:43 EST 2019" starttimestamp="1576731538934" timestamp="12344255" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="28" _type="ShellCommand" date="Thu Dec 19 06:18:13 EST 2019" starttimestamp="1576731538934" timestamp="22755021" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="29" _type="ShellCommand" date="Thu Dec 19 06:18:14 EST 2019" starttimestamp="1576731538934" timestamp="22755260" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="30" _type="ShellCommand" date="Thu Dec 19 06:18:18 EST 2019" starttimestamp="1576731538934" timestamp="22759417" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="31" _type="ShellCommand" date="Thu Dec 19 06:19:03 EST 2019" starttimestamp="1576731538934" timestamp="22804390" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="32" _type="ShellCommand" date="Thu Dec 19 06:19:14 EST 2019" starttimestamp="1576731538934" timestamp="22815831" type="ECLIPSE_LOST_FOCUS" />
+</Events>

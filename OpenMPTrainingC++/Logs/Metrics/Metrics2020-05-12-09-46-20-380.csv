@@ -1,0 +1,5 @@
+Id,Prediction,Date,File,StartTime,ElapsedTime,BusyTime,Commands,editOrInsertPercentage,debugPercentage,navigationPercentage,focusPercentage,removePercentage,editPercentage,COMMAND_RATE,NAVIGATION_RATE,DEBUG_RATE,FOCUS_RATE,EDIT_RATE,REMOVE_RATE,INSERT_RATE,webLinkTimes,Web Page Visits
+1,,Tue May 12 09:47:47 EDT 2020,sum_utils.cpp,1589291267284,8594,8594,(I)1(N)4(I)2(N)1(I)1(N)1(I)1(N)1(I)1(N)2,0.4,0.0,60.0,0.0,0.0,0.0,1.875,1.125,0.0,0.0,0.0,0.0,0.75,0.0,[]
+,/modelData/A0UserStudy2010.arff,Tue May 12 09:47:47 EDT 2020,sum_utils.cpp, 1589291267284
+2,,Tue May 12 09:47:58 EDT 2020,sum_utils.cpp,1589291278701,46903,0,(N)1(F)1,0.0,0.0,50.0,50.0,0.0,0.0,0.043478260869565216,0.021739130434782608,0.0,0.021739130434782608,0.0,0.0,0.0,0.0,[]
+3,,Tue May 12 09:48:45 EDT 2020,sum_sequential.cpp,1589291325605,11541,0,(I)6,1.0,0.0,0.0,0.0,0.0,0.0,0.5454545454545454,0.0,0.0,0.0,0.0,0.0,0.5454545454545454,0.0,[]

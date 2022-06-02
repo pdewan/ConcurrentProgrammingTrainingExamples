@@ -1,0 +1,36 @@
+<Events startTimestamp="1654060071705" logVersion="1.0.0.202206010006">
+  <Command __id="215" _type="ShellCommand" date="Wed Jun 01 03:40:39 EDT 2022" starttimestamp="1654060071705" timestamp="9167440" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="217" _type="EclipseCommand" commandID="org.eclipse.ui.file.import" date="Wed Jun 01 03:40:39 EDT 2022" starttimestamp="1654060071705" timestamp="9167528" />
+  <Command __id="219" _type="PauseCommand" date="Wed Jun 01 03:41:03 EDT 2022" range="20s-30s" starttimestamp="1654060071705" timestamp="9192259">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[24731]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="218" _type="ShellCommand" date="Wed Jun 01 03:41:03 EDT 2022" starttimestamp="1654060071705" timestamp="9192259" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="221" _type="PauseCommand" date="Wed Jun 01 03:41:20 EDT 2022" range="10s-20s" starttimestamp="1654060071705" timestamp="9208376">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[16116]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="220" _type="ShellCommand" date="Wed Jun 01 03:41:20 EDT 2022" starttimestamp="1654060071705" timestamp="9208375" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="222" _type="EclipseCommand" commandID="org.eclipse.ui.project.properties" date="Wed Jun 01 03:41:20 EDT 2022" starttimestamp="1654060071705" timestamp="9208414" />
+  <Command __id="224" _type="PauseCommand" date="Wed Jun 01 03:41:26 EDT 2022" range="5s-10s" starttimestamp="1654060071705" timestamp="9215242">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[6828]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="223" _type="ShellCommand" date="Wed Jun 01 03:41:26 EDT 2022" starttimestamp="1654060071705" timestamp="9215242" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="226" _type="PauseCommand" date="Wed Jun 01 03:42:06 EDT 2022" range="30s-1m" starttimestamp="1654060071705" timestamp="9255269">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[40026]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+</Events>

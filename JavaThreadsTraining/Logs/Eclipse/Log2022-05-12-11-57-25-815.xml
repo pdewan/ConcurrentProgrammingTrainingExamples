@@ -1,0 +1,424 @@
+<Events startTimestamp="1652371045815" logVersion="1.0.0.202205120948">
+  <Command __id="25776" _type="EclipseCommand" commandID="" date="Fri May 20 10:16:50 EDT 2022" starttimestamp="1652371045815" timestamp="685164520" />
+  <Command __id="25778" _type="ShellCommand" date="Fri May 20 10:16:50 EDT 2022" starttimestamp="1652371045815" timestamp="685164552" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25779" _type="EclipseCommand" commandID="" date="Fri May 20 10:16:50 EDT 2022" starttimestamp="1652371045815" timestamp="685164661" />
+  <DocumentChange __id="25742" _type="Delete" date="Fri May 20 10:02:11 EDT 2022" docASTNodeCount="165" docActiveCodeLength="1257" docExpressionCount="126" docLength="1513" endLine="14" length="81" offset="648" startLine="12" starttimestamp="1652371045815" timestamp="684285653">
+    <text><![CDATA[
+import trace.grader.basics.GraderBasicsTraceUtility;
+import util.trace.Tracer;]]></text>
+  </DocumentChange>
+  <DocumentChange __id="25744" _type="Delete" date="Fri May 20 10:02:11 EDT 2022" docASTNodeCount="141" docActiveCodeLength="1086" docExpressionCount="104" docLength="1342" endLine="11" length="171" offset="395" startLine="9" starttimestamp="1652371045815" timestamp="684285720">
+    <text><![CDATA[
+import gradingTools.comp110.assignment1.addmultiply.testcases.PrintAddAndMultiplyTestCase;
+import gradingTools.comp110.assignment1.addmultiply.testcases.PromptTestCase;]]></text>
+  </DocumentChange>
+  <Command __id="25781" _type="PauseCommand" date="Fri May 20 10:17:01 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="685175523">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[10862]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="25782" _type="MoveCaretCommand" caretOffset="0" date="Fri May 20 10:17:01 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="685175880" />
+  <Command __id="25784" _type="PauseCommand" date="Fri May 20 10:17:12 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="685186259">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[10379]]></pause>
+    <nextType><![CDATA[Move Caret]]></nextType>
+    <next><![CDATA[MoveCaretCommand]]></next>
+  </Command>
+  <Command __id="25783" _type="MoveCaretCommand" caretOffset="873" date="Fri May 20 10:17:12 EDT 2022" docOffset="917" starttimestamp="1652371045815" timestamp="685186259" />
+  <Command __id="25786" _type="PauseCommand" date="Fri May 20 10:17:13 EDT 2022" range="1s-2s" starttimestamp="1652371045815" timestamp="685187518">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1259]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[EclipseCommand]]></next>
+  </Command>
+  <Command __id="25785" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Fri May 20 10:17:13 EDT 2022" starttimestamp="1652371045815" timestamp="685187518" />
+  <Command __id="25788" _type="PauseCommand" date="Fri May 20 10:17:35 EDT 2022" range="20s-30s" starttimestamp="1652371045815" timestamp="685210056">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[22538]]></pause>
+    <nextType><![CDATA[Move Caret]]></nextType>
+    <next><![CDATA[MoveCaretCommand]]></next>
+  </Command>
+  <Command __id="25787" _type="MoveCaretCommand" caretOffset="1359" date="Fri May 20 10:17:35 EDT 2022" docOffset="1403" starttimestamp="1652371045815" timestamp="685210056" />
+  <Command __id="25790" _type="PauseCommand" date="Fri May 20 10:17:39 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685213221">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[3165]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[EclipseCommand]]></next>
+  </Command>
+  <Command __id="25789" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Fri May 20 10:17:39 EDT 2022" starttimestamp="1652371045815" timestamp="685213221" />
+  <Command __id="25793" _type="PauseCommand" date="Fri May 20 10:17:50 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="685224192">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[10971]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25792" _type="ShellCommand" date="Fri May 20 10:17:50 EDT 2022" starttimestamp="1652371045815" timestamp="685224192" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25795" _type="PauseCommand" date="Fri May 20 10:17:56 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685231027">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[6835]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[FindCommand]]></next>
+  </Command>
+  <Command __id="25794" _type="FindCommand" caseSensitive="false" date="Fri May 20 10:17:56 EDT 2022" forward="true" matchWord="false" offset="1414" regexp="false" replaceAll="false" selection="Find" selectionScope="false" starttimestamp="1652371045815" timestamp="685231027" wrapSearch="true">
+    <searchString><![CDATA[helloWorker]]></searchString>
+    <replaceString><![CDATA[]]></replaceString>
+  </Command>
+  <Command __id="25797" _type="PauseCommand" date="Fri May 20 10:18:05 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685240062">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[FindCommand]]></prev>
+    <pause><![CDATA[9035]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25796" _type="ShellCommand" date="Fri May 20 10:18:05 EDT 2022" starttimestamp="1652371045815" timestamp="685240062" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25799" _type="PauseCommand" date="Fri May 20 10:18:09 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685243205">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[3143]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25798" _type="ShellCommand" date="Fri May 20 10:18:09 EDT 2022" starttimestamp="1652371045815" timestamp="685243205" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25800" _type="FindCommand" caseSensitive="false" date="Fri May 20 10:18:09 EDT 2022" forward="true" matchWord="false" offset="1553" regexp="false" replaceAll="false" selection="Find" selectionScope="false" starttimestamp="1652371045815" timestamp="685243312" wrapSearch="true">
+    <searchString><![CDATA[helloWorker]]></searchString>
+    <replaceString><![CDATA[]]></replaceString>
+  </Command>
+  <Command __id="25802" _type="PauseCommand" date="Fri May 20 10:18:10 EDT 2022" range="1s-2s" starttimestamp="1652371045815" timestamp="685244893">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[FindCommand]]></prev>
+    <pause><![CDATA[1581]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[FindCommand]]></next>
+  </Command>
+  <Command __id="25801" _type="FindCommand" caseSensitive="false" date="Fri May 20 10:18:10 EDT 2022" forward="true" matchWord="false" offset="928" regexp="false" replaceAll="false" selection="Find" selectionScope="false" starttimestamp="1652371045815" timestamp="685244893" wrapSearch="true">
+    <searchString><![CDATA[helloWorker]]></searchString>
+    <replaceString><![CDATA[]]></replaceString>
+  </Command>
+  <Command __id="25804" _type="PauseCommand" date="Fri May 20 10:18:16 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685250446">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[FindCommand]]></prev>
+    <pause><![CDATA[5553]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25803" _type="ShellCommand" date="Fri May 20 10:18:16 EDT 2022" starttimestamp="1652371045815" timestamp="685250446" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25780" _type="DiffBasedFileOpenCommand" date="Fri May 20 10:17:01 EDT 2022" docASTNodeCount="279" docActiveCodeLength="1490" docExpressionCount="166" docLength="1938" projectName="JavaThreadsTraining" starttimestamp="1652371045815" timestamp="685175523">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\JavaThreadsTraining\src\HelloBarrier.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[import java.lang.*;
+import java.util.concurrent.CyclicBarrier;
+
+public class HelloBarrier {
+    public static void main(String[] args) {
+	int numThreads = 0;
+
+	// Number of threads to be executed shoul be passed on the command line
+
+	//  If nothing was passed on the command line, then print error and exit
+	if (args.length < 1) {
+	    System.err.println("usage: Hello <number_of_threads>");
+	    System.exit(0);
+	}
+	// Convert the command line string to an integer, exit if error
+	try {
+	    numThreads = Integer.parseInt(args[0]);
+	} catch (Exception ex) {
+	    System.err.println("Cannot convert argument on command line to integer");
+	    System.exit(1);
+	}
+
+	CyclicBarrier b = new CyclicBarrier(numThreads+1);
+	// Spawn the number of threads passed on the command line
+	Thread[] threads = new Thread[numThreads];
+	for (int i = 0; i < numThreads; i++) {
+	    threads[i] = new Thread(new HelloWorker(i, b));
+	    threads[i].start();
+	}
+
+	// time start
+	try { b.await(); } catch (Exception ex) {} 
+	System.out.println("Main waiting...");
+	try { b.await(); } catch (Exception ex) {}
+	// time end
+	System.out.println("Main done");
+
+	// Wait for the threads to finish
+	for (int i = 0; i < numThreads; i++) {
+	    try {
+		threads[i].join();
+	    } catch (Exception ex) {
+		System.err.println("Error while waiting for thread " + i);
+	    }
+	}
+    }
+}
+
+class HelloWorker implements Runnable {
+    public int id;
+    CyclicBarrier barrier;
+
+    // Constructor to set the id for this thread
+    HelloWorker(int iden, CyclicBarrier bar) {
+	id = iden;
+	barrier = bar;
+    }
+
+    // This method is invoked when the thread starts.  It will print a friendly message.
+    public void run() {
+	try { barrier.await(); } catch (Exception ex) {}
+	synchronized(this) {
+	    System.out.println("Hello World from thread " + id);
+	}
+	try { barrier.await(); } catch (Exception ex) {}
+    }
+}
+]]></snapshot>
+  </Command>
+  <Command __id="25806" _type="PauseCommand" date="Fri May 20 10:18:22 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685256620">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[6174]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="25807" _type="ShellCommand" date="Fri May 20 10:18:22 EDT 2022" starttimestamp="1652371045815" timestamp="685256751" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25809" _type="PauseCommand" date="Fri May 20 10:18:26 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685261126">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[4375]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25808" _type="ShellCommand" date="Fri May 20 10:18:26 EDT 2022" starttimestamp="1652371045815" timestamp="685261126" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25811" _type="PauseCommand" date="Fri May 20 10:18:34 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685268675">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[7549]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25810" _type="ShellCommand" date="Fri May 20 10:18:34 EDT 2022" starttimestamp="1652371045815" timestamp="685268675" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25813" _type="PauseCommand" date="Fri May 20 10:18:37 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685271481">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[2805]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25812" _type="ShellCommand" date="Fri May 20 10:18:37 EDT 2022" starttimestamp="1652371045815" timestamp="685271480" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25805" _type="DiffBasedFileOpenCommand" date="Fri May 20 10:18:22 EDT 2022" projectName="JavaThreadsTraining" starttimestamp="1652371045815" timestamp="685256620">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\JavaThreadsTraining\src\java_slides.pptx]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="25814" _type="DiffBasedFileOpenCommand" date="Fri May 20 10:18:37 EDT 2022" docASTNodeCount="279" docActiveCodeLength="1490" docExpressionCount="166" docLength="1938" projectName="JavaThreadsTraining" starttimestamp="1652371045815" timestamp="685271733">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\JavaThreadsTraining\src\HelloBarrier.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"import java.lang.*;import java.util.concurrent.CyclicBarrier;public class HelloBarrier {    public static void main(String[] args) {	int numThreads = 0;	// Number of threads to be executed shoul be passed on the command line	//  If nothing was passed on the command line, then print error and exit	if (args.length < 1) {	    System.err.println("usage: Hello <number_of_threads>");	    System.exit(0);	}	// Convert the command line string to an integer, exit if error	try {	    numThreads = Integer.parseInt(args[0]);	} catch (Exception ex) {	    System.err.println("Cannot convert argument on command line to integer");	    System.exit(1);	}	CyclicBarrier b = new CyclicBarrier(numThreads+1);	// Spawn the number of threads passed on the command line	Thread[] threads = new Thread[numThreads];	for (int i = 0; i < numThreads; i++) {	    threads[i] = new Thread(new HelloWorker(i, b));	    threads[i].start();	}	// time start	try { b.await(); } catch (Exception ex) {} 	System.out.println("Main waiting...");	try { b.await(); } catch (Exception ex) {}	// time end	System.out.println("Main done");	// Wait for the threads to finish	for (int i = 0; i < numThreads; i++) {	    try {		threads[i].join();	    } catch (Exception ex) {		System.err.println("Error while waiting for thread " + i);	    }	}    }}class HelloWorker implements Runnable {    public int id;    CyclicBarrier barrier;    // Constructor to set the id for this thread    HelloWorker(int iden, CyclicBarrier bar) {	id = iden;	barrier = bar;    }    // This method is invoked when the thread starts.  It will print a friendly message.    public void run() {	try { barrier.await(); } catch (Exception ex) {}	synchronized(this) {	    System.out.println("Hello World from thread " + id);	}	try { barrier.await(); } catch (Exception ex) {}    }}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="25816" _type="PauseCommand" date="Fri May 20 10:18:39 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685274138">
+    <prevType><![CDATA[Open File]]></prevType>
+    <prev><![CDATA[DiffBasedFileOpenCommand]]></prev>
+    <pause><![CDATA[2405]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="25817" _type="SelectTextCommand" caretOffset="1370" date="Fri May 20 10:18:40 EDT 2022" end="1370" start="1359" starttimestamp="1652371045815" timestamp="685274307" />
+  <Command __id="25818" _type="MoveCaretCommand" caretOffset="0" date="Fri May 20 10:18:40 EDT 2022" docOffset="0" starttimestamp="1652371045815" timestamp="685274343" />
+  <Command __id="25820" _type="PauseCommand" date="Fri May 20 10:18:56 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="685290473">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[16130]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25821" _type="EclipseCommand" commandID="" date="Fri May 20 10:19:35 EDT 2022" starttimestamp="1652371045815" timestamp="685330069" />
+  <Command __id="25823" _type="EclipseCommand" commandID="" date="Fri May 20 10:19:35 EDT 2022" starttimestamp="1652371045815" timestamp="685330147" />
+  <Command __id="25825" _type="PauseCommand" date="Fri May 20 10:19:41 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685335296">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[5149]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25824" _type="ShellCommand" date="Fri May 20 10:19:41 EDT 2022" starttimestamp="1652371045815" timestamp="685335296" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25826" _type="EclipseCommand" commandID="org.eclipse.ui.project.properties" date="Fri May 20 10:19:41 EDT 2022" starttimestamp="1652371045815" timestamp="685335356" />
+  <Command __id="25815" _type="DiffBasedFileOpenCommand" date="Fri May 20 10:18:39 EDT 2022" docASTNodeCount="367" docActiveCodeLength="1779" docExpressionCount="232" docLength="1779" projectName="JavaThreadsTraining" starttimestamp="1652371045815" timestamp="685274138">
+    <filePath><![CDATA[D:\dewan_backup\C\OpenMPTraining\JavaThreadsTraining\src\SumArray.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[import java.lang.*;
+import java.util.Random;
+
+public class SumArray {
+    public static void main(String[] args) {
+	int numItems = 0;
+	if (args.length < 1) {
+	    System.err.println("usage: SumArray <number_of_items>");
+	    System.exit(0);
+	}
+	try {
+	    numItems = Integer.parseInt(args[0]);
+	} catch (Exception ex) {
+	    System.err.println("Cannot convert argument on command line to integer");
+	    System.exit(1);
+	}
+
+	Runnable runnable = new Printer(numItems);
+	Thread[] threads = new Thread[4];
+	for (int i = 0; i < 4; i++) {
+	    threads[i] = new Thread(runnable);
+	    threads[i].start();
+	}
+	int sum = 0;
+	for (int i = 0; i < 4; i++) {
+	    try {
+		threads[i].join();	
+	    } catch (Exception ex) {
+		System.err.println("Error while waiting for thread " + i);
+	    }
+	}
+	for (int i : ((Printer) runnable).sums) {
+	    sum += i;
+	}
+	System.out.println("Total: " + sum);
+    }
+}
+
+class Printer implements Runnable {
+    public int[] intArray;
+    private int nextId = 0;
+    public int[] sums;
+    
+    Printer(int numItems) {
+	intArray = new int[numItems];
+	Random rand = new Random();
+	for (int i = 0; i < numItems; i++) {
+	    intArray[i] = rand.nextInt(50);
+	}
+	sums = new int[4];
+    }
+
+    public void run() {
+	int myId = 0;
+	synchronized(this) {
+	    myId = nextId;
+	    nextId++;
+	}
+	int howBig = intArray.length / 4;
+	int myStart = myId * howBig;
+	int myEnd = myStart + howBig-1;
+	if (myId == 3) {
+	    myEnd = intArray.length-1;
+	}
+
+	sums[myId] = 0;
+	for (int i = myStart; i <= myEnd; i++) {
+	    synchronized(this) {
+		System.out.println("Thread " + myId + " index " + i + " in (" + myStart + ".." +
+				   myEnd + "): " + intArray[i]);
+		sums[myId] += intArray[i];
+	    }
+	}
+    }
+}
+]]></snapshot>
+  </Command>
+  <Command __id="25828" _type="PauseCommand" date="Fri May 20 10:19:46 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="685341008">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[5652]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="25829" _type="SelectTextCommand" caretOffset="1370" date="Fri May 20 10:19:47 EDT 2022" end="1370" start="1359" starttimestamp="1652371045815" timestamp="685341212" />
+  <Command __id="25831" _type="PauseCommand" date="Fri May 20 10:19:51 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="685345687">
+    <prevType><![CDATA[Select]]></prevType>
+    <prev><![CDATA[SelectTextCommand]]></prev>
+    <pause><![CDATA[4475]]></pause>
+    <nextType><![CDATA[Move Caret]]></nextType>
+    <next><![CDATA[MoveCaretCommand]]></next>
+  </Command>
+  <Command __id="25830" _type="MoveCaretCommand" caretOffset="1353" date="Fri May 20 10:19:51 EDT 2022" docOffset="1397" starttimestamp="1652371045815" timestamp="685345687" />
+  <Command __id="25832" _type="MoveCaretCommand" caretOffset="1353" date="Fri May 20 10:19:51 EDT 2022" docOffset="1397" starttimestamp="1652371045815" timestamp="685345687" />
+  <Command __id="25834" _type="PauseCommand" date="Fri May 20 10:20:03 EDT 2022" range="10s-20s" starttimestamp="1652371045815" timestamp="685358140">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[12453]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25833" _type="ShellCommand" date="Fri May 20 10:20:03 EDT 2022" starttimestamp="1652371045815" timestamp="685358140" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25836" _type="PauseCommand" date="Fri May 20 10:43:51 EDT 2022" range="20m-30m" starttimestamp="1652371045815" timestamp="686785467">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[1427320]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[BalloonCommand]]></next>
+  </Command>
+  <Command __id="25835" _type="BalloonCommand" date="Fri May 20 10:43:51 EDT 2022" message="*******************************************
+Worked 16 minutes(fixed)/26 minutes(context based) from
+Fri May 20 09:43:51 EDT 2022 to Fri May 20 10:20:03 EDT 2022
+Edited 1 Projects: 
+	ConcurrentProgrammingChecks
+Edited 1 Files: 
+	D:\dewan_backup\Java\ConcurrentProgrammingChecks\src\gradingTools\comp4760\assignment1\Assignment1Suite.java
+Number of insert: 0
+Number of delete: 252
+" starttimestamp="1652371045815" timestamp="686785460">
+    <fineGrainedWorkTime><![CDATA[26]]></fineGrainedWorkTime>
+    <insert><![CDATA[0]]></insert>
+    <startTime><![CDATA[1653054231269]]></startTime>
+    <endTime><![CDATA[1653056403955]]></endTime>
+    <workTime><![CDATA[16]]></workTime>
+    <delete><![CDATA[252]]></delete>
+  </Command>
+  <Command __id="25838" _type="PauseCommand" date="Fri May 20 23:09:17 EDT 2022" range=">1h" starttimestamp="1652371045815" timestamp="731511467">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[BalloonCommand]]></prev>
+    <pause><![CDATA[44726003]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25837" _type="ShellCommand" date="Fri May 20 23:09:17 EDT 2022" starttimestamp="1652371045815" timestamp="731511463" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25840" _type="PauseCommand" date="Fri May 20 23:09:20 EDT 2022" range="2s-5s" starttimestamp="1652371045815" timestamp="731514512">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[3049]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25839" _type="ShellCommand" date="Fri May 20 23:09:20 EDT 2022" starttimestamp="1652371045815" timestamp="731514512" type="ECLIPSE_MINIMIZED" />
+  <Command __id="25841" _type="ShellCommand" date="Fri May 20 23:09:20 EDT 2022" starttimestamp="1652371045815" timestamp="731514524" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25843" _type="PauseCommand" date="Sat May 21 08:55:29 EDT 2022" range=">1h" starttimestamp="1652371045815" timestamp="766683902">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[35169373]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25842" _type="ShellCommand" date="Sat May 21 08:55:29 EDT 2022" starttimestamp="1652371045815" timestamp="766683897" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="25844" _type="ShellCommand" date="Sat May 21 08:55:30 EDT 2022" starttimestamp="1652371045815" timestamp="766684469" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="25846" _type="PauseCommand" date="Sat May 21 08:55:36 EDT 2022" range="5s-10s" starttimestamp="1652371045815" timestamp="766690641">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[6172]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="25845" _type="ShellCommand" date="Sat May 21 08:55:36 EDT 2022" starttimestamp="1652371045815" timestamp="766690641" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="25848" _type="PauseCommand" date="Sat May 21 09:04:34 EDT 2022" range="5m-10m" starttimestamp="1652371045815" timestamp="767228938">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[538296]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+</Events>
