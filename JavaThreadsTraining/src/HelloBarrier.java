@@ -30,11 +30,14 @@ public class HelloBarrier {
 	}
 
 	// time start
+	System.out.println("Main waiting to say hello...");
+
 	try { b.await(); } catch (Exception ex) {} 
-	System.out.println("Main waiting...");
+	System.out.println("Main says hello");
+	System.out.println("Main waiting to say goodbye");
 	try { b.await(); } catch (Exception ex) {}
 	// time end
-	System.out.println("Main done");
+	System.out.println("Main waiting for all goodbyes");
 
 	// Wait for the threads to finish
 	for (int i = 0; i < numThreads; i++) {
@@ -44,6 +47,8 @@ public class HelloBarrier {
 		System.err.println("Error while waiting for thread " + i);
 	    }
 	}
+	System.out.println("All goodbyes done");
+
     }
 }
 class HelloHelper implements Runnable {
@@ -58,11 +63,18 @@ class HelloHelper implements Runnable {
 
     // This method is invoked when the thread starts.  It will print a friendly message.
     public void run() {
+	    System.out.println("Thread " + id + " waiting to say hello");
+
 	try { barrier.await(); } catch (Exception ex) {}
 	synchronized(this) {
 	    System.out.println("Hello World from thread " + id);
 	}
+    System.out.println("Thread " + id + " waiting to say goodbye");
+
 	try { barrier.await(); } catch (Exception ex) {}
+    System.out.println("Thread " + id + " says goodbye");
+
     }
+
 }
 

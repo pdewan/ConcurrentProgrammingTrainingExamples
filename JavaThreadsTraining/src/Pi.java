@@ -1,9 +1,11 @@
 import java.lang.*;
-import java.lang.Math;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import edu.emory.mathcs.backport.java.util.Arrays;
+
 public class Pi {
+	public static final int NUM_THREADS = 4;
     public static void main(String[] iters) {
 	int numIter = 0;
 	if (iters.length < 1) {
@@ -19,9 +21,9 @@ public class Pi {
 
 	long s1 = System.nanoTime();
 	Runnable[] runnables = new Runnable[4];
-	Thread[] threads = new Thread[4];
-	for (int i = 0; i < 4; i++) {
-	    runnables[i] = new Monte(numIter/4);
+	Thread[] threads = new Thread[NUM_THREADS];
+	for (int i = 0; i < NUM_THREADS; i++) {
+	    runnables[i] = new Monte(numIter/NUM_THREADS);
 	    threads[i] = new Thread(runnables[i]);
 	    threads[i].start();
 	}
@@ -30,7 +32,11 @@ public class Pi {
 	try {
 	    for (int i = 0; i < 4; i++) {
 		threads[i].join();
-		answer += ((Monte) runnables[i]).getInCircle();
+		double threadInCircle = ((Monte) runnables[i]).getInCircle();
+//		System.out.println("From Thread:" + i + " In Circle:" + threadInCircle);
+//		answer += ((Monte) runnables[i]).getInCircle();
+		answer += threadInCircle;
+
 	    }
 	} catch (Exception ex) {
 	    System.err.println("Thread interrupted");
@@ -39,22 +45,34 @@ public class Pi {
 
 	long s2 = System.nanoTime();
 	System.out.println("Time: " + (s2 - s1)/1000000000.0);
-	System.out.println("Ratio is: " + 4*(answer/numIter));
+	System.out.println("Root Thread->PI:" + NUM_THREADS*(answer/numIter));
 	
     }
 }
 
 class Monte implements Runnable {
-
+    static int nextId;
     private double inCircle;
     private int iters;
+    int myId;
+    public double[] xRandoms;
+    public double[] yRandoms;
+
     
     public void run() {
-	inCircle = findInside(iters);
+      xRandoms = new double [iters];
+      yRandoms = new double [iters];
+	  inCircle = findInside(iters);
+	  printProperty("XRandoms:", Arrays.toString(xRandoms));
+	  printProperty("YRandoms:", Arrays.toString(yRandoms));
+	  printProperty("InCircle:", inCircle);
+
     }
 
     public Monte(int iterations) {
 	iters = iterations;
+	myId = nextId++;
+
     }
 
     public double getInCircle() {
@@ -69,13 +87,28 @@ class Monte implements Runnable {
 	    // get random number from 0 to 1
 	    double x = rand.nextDouble();
 	    double y = rand.nextDouble();
+	    printProperty("X", x);
+	    printProperty("Y", y);
+	    xRandoms[i] = x;
+	    yRandoms[i] = y;
 	    double hyp = Math.sqrt(x*x + y*y);
-	    if (hyp < 1.0) {
+	    boolean inside = hyp < 1.0;
+	    printProperty("Inside", inside);
+	    if (inside) {
 		numIn++;
 	    }
 	}
 	return numIn;
      }
-    
+    public static final int LARGE_PROBLEM_SIZE = 5; 
+
+	 void printProperty(String aPropertyName, Object aPropertyValue) {
+		if (iters < LARGE_PROBLEM_SIZE) {
+			System.out.println(threadPrefix() + aPropertyName+ ":" + aPropertyValue);
+		}
+	}
+	public static String threadPrefix() {
+		return "Thread " + Thread.currentThread().getId() + "->";
+	}
 }
 

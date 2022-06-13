@@ -2,90 +2,128 @@ import java.lang.*;
 import java.lang.Math;
 import java.util.Random;
 
+import edu.emory.mathcs.backport.java.util.Arrays;
+
 public class Primes {
-    public static void main(String[] args) {
+	public static final int NUM_THREADS = 4;
 	
-	int numItems = 0;
-	if (args.length < 1) {
-	    System.err.println("usage: Hello <number_of_items>");
-	    System.exit(0);
+	public static void main(String[] args) {
+
+		int numItems = 0;
+		if (args.length < 1) {
+			System.err.println("usage: Primes <number_of_items>");
+			System.exit(0);
+		}
+		try {
+			numItems = Integer.parseInt(args[0]);
+		} catch (Exception ex) {
+			System.err.println("Cannot convert argument on command line to integer");
+			System.exit(1);
+		}
+
+		Runnable runnable = new PrimesWorker(numItems);
+		Thread[] threads = new Thread[4];
+//	Thread[] threads = new Thread[numItems];
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+
+			threads[i] = new Thread(runnable);
+			threads[i].start();
+		}
+		int answer = 0;
+
+		for (int i = 0; i < NUM_THREADS; i++) {
+			try {
+				threads[i].join();
+				int aThreadAnswer = ((PrimesWorker) runnable).getAnswer(i);
+				answer += aThreadAnswer;
+//				answer += ((Counter) runnable).getAnswer(i);
+//				System.out.println("Thread:" + threads[i].getId() + " Num Primes:" + aThreadAnswer);
+			} catch (Exception ex) {
+				System.err.println("Error while waiting for thread " + i);
+			}
+		}
+		System.out.println("Root Thread->NumPrimes:" + answer);
 	}
-	try {
-	    numItems = Integer.parseInt(args[0]);
-	} catch (Exception ex) {
-	    System.err.println("Cannot convert argument on command line to integer");
-	    System.exit(1);
-	}
-	
-	Runnable runnable = new Counter(numItems);
-	Thread[] threads = new Thread[4];
-	for (int i = 0; i < 4; i++) {
-	    threads[i] = new Thread(runnable);
-	    threads[i].start();
-	}
-	int answer = 0;
-	for (int i = 0; i < 4; i++) {
-	    try {
-		threads[i].join();
-		answer += ((Counter) runnable).getAnswer(i);
-	    } catch (Exception ex) {
-		System.err.println("Error while waiting for thread " + i);
-	    }
-	}
-	System.out.println("The number of primes is: " + answer);
-    }
 }
 
-
-class Counter implements Runnable {
-    public int[] intArray;
-    private int nextId = 0;
-    private int[] answers;
-
-    Counter(int numItems) {
-	intArray = new int[numItems];
-        Random rand = new Random();
-        for (int i = 0; i < numItems; i++) {
-            intArray[i] = rand.nextInt(50);
-        }
-	answers = new int[] {0,0,0,0}; 
-    }
-
-    public void run() {
-        int myId = 0;
-        synchronized(this) {
-            myId = nextId;
-            nextId++;
-        }
-        int howBig = intArray.length / 4;
-        int myStart = myId * howBig;
-        int myEnd = myStart + howBig-1;
-        if (myId == 3) {
-            myEnd = intArray.length-1;
-        }
+class PrimesWorker implements Runnable {
 	
-        for (int i = myStart; i <= myEnd; i++) {
-	    if (isPrime(intArray[i])) {
-		answers[myId]++;
-	    }
-        }
-    }
+	public int[] intArray;
+	private int nextId = 0;
+	private int[] answers;
 
-    boolean isPrime(int num) {
-	if (num == 2) return true;
+	PrimesWorker(int numItems) {
+		intArray = new int[numItems];
+		Random rand = new Random();
+		for (int i = 0; i < numItems; i++) {
+			intArray[i] = rand.nextInt(50);
+		}
+		if (isSmallProblem()) {
+		System.out.println("Root thread-> Random Numbers:" + Arrays.toString(intArray));
+		}
 
-	for (int i = 2; i <= Math.sqrt(num); i++) {
-	    if ((num % i) == 0) {
-		return false;
-	    }
+		answers = new int[] { 0, 0, 0, 0 };
 	}
 
-	return true;
-    }
+	public void run() {
+		int myId = 0;
+		synchronized (this) {
+			myId = nextId;
+			nextId++;
+		}
+		int howBig = intArray.length / Primes.NUM_THREADS;
+		int myStart = myId * howBig;
+		int myEnd = myStart + howBig - 1;
+		
+		if (myId == 3) {
+			myEnd = intArray.length - 1;
+		}
+//		System.out.println(threadPrefix() + " Start Index:" + myStart );
+//		System.out.println("Thread:" + Thread.currentThread().getId()  +  " End Index:" + myEnd);
 
-    int getAnswer(int idx) {
-	return answers[idx];
-    }
+		for (int i = myStart; i <= myEnd; i++) {
+			printProperty("index", i);
+			printProperty("number", intArray[i]);
+			boolean isPrime = isPrime(intArray[i]);
+			printProperty("isPrime", isPrime);
+
+			if (isPrime) {
+				answers[myId]++;
+			}
+		}
+		printProperty("NumPrimes", answers[myId]);
+	}
+
+	public static boolean isPrime(int num) {
+		if (num == 2)
+			return true;
+
+		for (int i = 2; i <= Math.sqrt(num); i++) {
+			if ((num % i) == 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	int getAnswer(int idx) {
+		return answers[idx];
+	}
+	public static final int LARGE_PROBLEM_SIZE = 25; 
+	
+	boolean isSmallProblem() {
+		return intArray.length < LARGE_PROBLEM_SIZE;
+	}
+
+	 void printProperty(String aPropertyName, Object aPropertyValue) {
+		if (isSmallProblem()) {
+			System.out.println(threadPrefix() + aPropertyName+ ":" + aPropertyValue);
+		}
+	}
+	public static String threadPrefix() {
+		return "Thread " + Thread.currentThread().getId() + "->";
+	}
 
 }
-
