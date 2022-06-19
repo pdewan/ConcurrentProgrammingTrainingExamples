@@ -6,7 +6,7 @@ import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class Primes {
 	public static final int NUM_THREADS = 4;
-	
+
 	public static void main(String[] args) {
 
 		int numItems = 0;
@@ -21,11 +21,11 @@ public class Primes {
 			System.exit(1);
 		}
 
-		Runnable runnable = new PrimesWorker(numItems);
+		Runnable runnable = new PrimesHelper(numItems);
 		Thread[] threads = new Thread[4];
 //	Thread[] threads = new Thread[numItems];
 
-	for (int i = 0; i < NUM_THREADS; i++) {
+		for (int i = 0; i < NUM_THREADS; i++) {
 
 			threads[i] = new Thread(runnable);
 			threads[i].start();
@@ -35,7 +35,7 @@ public class Primes {
 		for (int i = 0; i < NUM_THREADS; i++) {
 			try {
 				threads[i].join();
-				int aThreadAnswer = ((PrimesWorker) runnable).getAnswer(i);
+				int aThreadAnswer = ((PrimesHelper) runnable).getAnswer(i);
 				answer += aThreadAnswer;
 //				answer += ((Counter) runnable).getAnswer(i);
 //				System.out.println("Thread:" + threads[i].getId() + " Num Primes:" + aThreadAnswer);
@@ -43,25 +43,28 @@ public class Primes {
 				System.err.println("Error while waiting for thread " + i);
 			}
 		}
-		System.out.println("Root Thread->NumPrimes:" + answer);
+//		System.out.println("Root Thread->Num Primes:" + answer);
+		PrimesHelper.printProperty("Num Primes", answer);
 	}
+	
 }
 
-class PrimesWorker implements Runnable {
-	
-	public int[] intArray;
+class PrimesHelper implements Runnable {
+
+	public static int[] intArray;
 	private int nextId = 0;
 	private int[] answers;
 
-	PrimesWorker(int numItems) {
+	PrimesHelper(int numItems) {
 		intArray = new int[numItems];
 		Random rand = new Random();
 		for (int i = 0; i < numItems; i++) {
 			intArray[i] = rand.nextInt(50);
 		}
-		if (isSmallProblem()) {
-		System.out.println("Root thread-> Random Numbers:" + Arrays.toString(intArray));
-		}
+		printProperty("Random Numbers", Arrays.toString(intArray));
+//		if (isSmallProblem()) {
+//			System.out.println("Root Thread->Random Numbers:" + Arrays.toString(intArray));
+//		}
 
 		answers = new int[] { 0, 0, 0, 0 };
 	}
@@ -75,7 +78,7 @@ class PrimesWorker implements Runnable {
 		int howBig = intArray.length / Primes.NUM_THREADS;
 		int myStart = myId * howBig;
 		int myEnd = myStart + howBig - 1;
-		
+
 		if (myId == 3) {
 			myEnd = intArray.length - 1;
 		}
@@ -83,16 +86,16 @@ class PrimesWorker implements Runnable {
 //		System.out.println("Thread:" + Thread.currentThread().getId()  +  " End Index:" + myEnd);
 
 		for (int i = myStart; i <= myEnd; i++) {
-			printProperty("index", i);
-			printProperty("number", intArray[i]);
+			printProperty("Index", i);
+			printProperty("Number", intArray[i]);
 			boolean isPrime = isPrime(intArray[i]);
-			printProperty("isPrime", isPrime);
+			printProperty("Is Prime", isPrime);
 
 			if (isPrime) {
 				answers[myId]++;
 			}
 		}
-		printProperty("NumPrimes", answers[myId]);
+		printProperty("Num Primes", answers[myId]);
 	}
 
 	public static boolean isPrime(int num) {
@@ -111,17 +114,19 @@ class PrimesWorker implements Runnable {
 	int getAnswer(int idx) {
 		return answers[idx];
 	}
-	public static final int LARGE_PROBLEM_SIZE = 25; 
-	
-	boolean isSmallProblem() {
+
+	public static final int LARGE_PROBLEM_SIZE = 25;
+
+	static boolean isSmallProblem() {
 		return intArray.length < LARGE_PROBLEM_SIZE;
 	}
 
-	 void printProperty(String aPropertyName, Object aPropertyValue) {
+	static void printProperty(String aPropertyName, Object aPropertyValue) {
 		if (isSmallProblem()) {
-			System.out.println(threadPrefix() + aPropertyName+ ":" + aPropertyValue);
+			System.out.println(threadPrefix() + aPropertyName + ":" + aPropertyValue);
 		}
 	}
+
 	public static String threadPrefix() {
 		return "Thread " + Thread.currentThread().getId() + "->";
 	}

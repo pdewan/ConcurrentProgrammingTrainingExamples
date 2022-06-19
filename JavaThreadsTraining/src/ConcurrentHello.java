@@ -3,7 +3,7 @@ import java.lang.*;
 import util.annotations.Tags;
 
 //@Tags({"Hello"})
-public class Hello {
+public class ConcurrentHello {
 
 	public static final String GREETING = "Greeting:Hello World";
 	public static void main(String[] args) {
@@ -39,7 +39,8 @@ public class Hello {
 				System.err.println("Error while waiting for thread " + index);
 			}
 		}
-	    System.out.println("Root Thread" + "->" + GREETING);
+		System.out.println("Thread " + "Root" + "->" + ConcurrentHello.GREETING);
+
 //	    System.out.println("Goodbye World from main");
 
 
@@ -59,7 +60,7 @@ class HelloWorker implements Runnable {
 	// message.
 	public void run() {
 		synchronized (this) {
-			System.out.println("Thread " + id + "->" + Hello.GREETING);
+			System.out.println("Thread " + id + "->" + ConcurrentHello.GREETING);
 
 		}
 	}
