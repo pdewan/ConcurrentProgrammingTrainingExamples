@@ -7,7 +7,8 @@ public class ConcurrentMonteCarloPI {
 	public static final int LARGE_PROBLEM_SIZE = 10; // no prints if randomNumbers > LARGE_ARRAY_SIZE
 
 	private static int totalNumberInCircle = 0;
-	private static int numIterationsPerThread;
+	private static int minIterationsPerThread;
+	
 
 // END CONCURRENCY INDEPENDENT VARIABLES
 
@@ -23,15 +24,15 @@ public class ConcurrentMonteCarloPI {
 // END CONCURRENCY SPECIFIC VARIABLES
 
 	public static void main(String[] args) {
-		numIterationsPerThread = toInteger(args);
+		minIterationsPerThread = toInteger(args);
 
-		totalNumberOfIterations = numIterationsPerThread * NUM_THREADS;
+		totalNumberOfIterations = minIterationsPerThread * NUM_THREADS;
 		printProperty("Total Iterations", totalNumberOfIterations);
 		// sequential code below computes the same number of iterations as concurrent
 		// code should
 //		totalNumberInCircle = inCircle(aTotalNumIterations);	
 		serialPI();
-//		concurrentPI();
+		concurrentPI();
 		printProperty("Total In Circle", totalNumberInCircle);
 		double result = (((double) totalNumberInCircle) / totalNumberOfIterations) * 4;
 
@@ -111,7 +112,7 @@ public class ConcurrentMonteCarloPI {
 	// This method must be adapted for each problem based on the nature of
 	// the problem-specific input
 	public static boolean isSmallProblem() {
-		return numIterationsPerThread < LARGE_PROBLEM_SIZE;
+		return minIterationsPerThread < LARGE_PROBLEM_SIZE;
 	}
 
 	// This method must be reused directly in all testable code and should
@@ -127,58 +128,58 @@ public class ConcurrentMonteCarloPI {
 //	// generates code such as this
 //	
 //	
-//	private static void concurrentPI() {
-//		createRunnables();
-//		createAndStartThreads();
-//		joinThreads();
-//		
-//	}
-//	private static void createRunnables () {
-//		int aStartIndex = 0;
-//		for (int aThreadIndex = 0; aThreadIndex < NUM_THREADS; aThreadIndex++) {
-//			workers[aThreadIndex] = new MonteCarloWorker(numIterationsPerThread);
-//		}
-//	}
-//	
-//	
-//	
-//	private static void createAndStartThreads() {
-//		for (int index = 0; index < workers.length; index++) {
-//			threads[index] = new Thread(workers[index]);
-//			threads[index].start();
-//			// comment out this try catch block when asked
-////			try {
-////				Thread.sleep(100);
-////			} catch (InterruptedException e) {
-////				e.printStackTrace();
-////			}
-//		}
-//	}
-//	
-//	private static void joinThreads() {
-//		for (int index = 0; index < threads.length; index++) {
+	private static void concurrentPI() {
+		createRunnables();
+		createAndStartThreads();
+		joinThreads();
+		
+	}
+	private static void createRunnables () {
+		int aStartIndex = 0;
+		for (int aThreadIndex = 0; aThreadIndex < NUM_THREADS; aThreadIndex++) {
+			workers[aThreadIndex] = new MonteCarloWorker(minIterationsPerThread);
+		}
+	}
+	
+	
+	
+	private static void createAndStartThreads() {
+		for (int index = 0; index < workers.length; index++) {
+			threads[index] = new Thread(workers[index]);
+			threads[index].start();
+			// comment out this try catch block when asked
 //			try {
-//				threads[index].join();
+//				Thread.sleep(100);
 //			} catch (InterruptedException e) {
 //				e.printStackTrace();
-//			}			
-//		}
-//	}
+//			}
+		}
+	}
+	
+	private static void joinThreads() {
+		for (int index = 0; index < threads.length; index++) {
+			try {
+				threads[index].join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}			
+		}
+	}
 //// END BOILER-PLATE FORK_JOIN CONCURRENT CODE	
 //	
 }
 
 class MonteCarloWorker implements Runnable {
-//	int numberOfIterations;
-//	public MonteCarloWorker(int aNumberOfIterations) {
-//		numberOfIterations = aNumberOfIterations;
-//	}
+	int numberOfIterations;
+	public MonteCarloWorker(int aNumberOfIterations) {
+		numberOfIterations = aNumberOfIterations;
+	}
 	@Override
 	public void run() {
 //		// like sequential code except we do only our part of the problem
-//		int myInCircle = ConcurrentMonteCarloPI.inCircle(numberOfIterations);
-//		ConcurrentMonteCarloPI.printProperty("Num In Circle", myInCircle);
-//		ConcurrentMonteCarloPI.addNumberInCircle(myInCircle);
+		int myInCircle = ConcurrentMonteCarloPI.inCircle(numberOfIterations);
+		ConcurrentMonteCarloPI.printProperty("Num In Circle", myInCircle);
+		ConcurrentMonteCarloPI.addNumberInCircle(myInCircle);
 	}
-
 }
+

@@ -29,8 +29,8 @@ public class ConcurrentPrimeNumbers {
 		numRandomNumbers = toInteger(args);
 		randomNumbers = new int[numRandomNumbers];
 		fillRandomNumbers();
-		serialFillPrimeNumbers();
-//		concurrentFillPrimeNumbers();
+//		serialFillPrimeNumbers();
+		concurrentFillPrimeNumbers();
 		printProperty("Total Num Primes", numberOfPrimeNumbers);
 		
 
@@ -152,79 +152,79 @@ public class ConcurrentPrimeNumbers {
 	}
 // END BOILER PLATE TESTABLE SEQUENTIAL CODE
 	
-//// START BOILER PLATE FORK_JOIN CONCURRENT CODE
-//	// This code can also be given to the student. It is analogous to the
-//	// the fork-join directives OpemMP provides for us. In fact, OpenMP
-//	// generates code such as this
-//	
-//	private static void concurrentFillPrimeNumbers() {
-//		createRunnables();
-//		createAndStartThreads();
-//		joinThreads();
-//		
-//	}
-//	
-//	private static void createRunnables () {
-//		int aStartIndex = 0;
-//		for (int aThreadIndex = 0; aThreadIndex < NUM_THREADS; aThreadIndex++) {
-//			int aProblemSize = threadProblemSize(aThreadIndex, randomNumbers.length);
-//			int aStopIndex = aStartIndex + aProblemSize;
-//			workers[aThreadIndex] = new PrimesWorker(randomNumbers, 
-//					aStartIndex, aStopIndex);
-//			aStartIndex = aStopIndex; // next thread's start is this thread's stop
-//		}
-//	}
-//	
-//	public static int threadProblemSize (int aThreadIndex, int aProblemSize) {
-//		// following is the size if the problem can be eveny divided among the threads
-//		int aMinimumProblemSize = aProblemSize/NUM_THREADS; 
-//		// some threads must take one of the remaining iterations
-//		int aRemainder = aProblemSize % NUM_THREADS; 
-//		// distribute the remainder among the first aRemainder threads
-//		if (aThreadIndex < aRemainder) {
-//			return aMinimumProblemSize + 1;
-//		}
-//		return aMinimumProblemSize;           
-//	}
-//	
-//	private static void createAndStartThreads() {
-//		for (int index = 0; index < workers.length; index++) {
-//			threads[index] = new Thread(workers[index]);
-//			threads[index].start();
-//			// comment out this try catch block when asked
-////			try {
-////				Thread.sleep(100);
-////			} catch (InterruptedException e) {
-////				e.printStackTrace();
-////			}
-//		}
-//	}
-//	
-//	private static void joinThreads() {
-//		for (int index = 0; index < threads.length; index++) {
+// START BOILER PLATE FORK_JOIN CONCURRENT CODE
+	// This code can also be given to the student. It is analogous to the
+	// the fork-join directives OpemMP provides for us. In fact, OpenMP
+	// generates code such as this
+	
+	private static void concurrentFillPrimeNumbers() {
+		createRunnables();
+		createAndStartThreads();
+		joinThreads();
+		
+	}
+	
+	private static void createRunnables () {
+		int aStartIndex = 0;
+		for (int aThreadIndex = 0; aThreadIndex < NUM_THREADS; aThreadIndex++) {
+			int aProblemSize = threadProblemSize(aThreadIndex, randomNumbers.length);
+			int aStopIndex = aStartIndex + aProblemSize;
+			workers[aThreadIndex] = new PrimesWorker(randomNumbers, 
+					aStartIndex, aStopIndex);
+			aStartIndex = aStopIndex; // next thread's start is this thread's stop
+		}
+	}
+	
+	public static int threadProblemSize (int aThreadIndex, int aProblemSize) {
+		// following is the size if the problem can be eveny divided among the threads
+		int aMinimumProblemSize = aProblemSize/NUM_THREADS; 
+		// some threads must take one of the remaining iterations
+		int aRemainder = aProblemSize % NUM_THREADS; 
+		// distribute the remainder among the first aRemainder threads
+		if (aThreadIndex < aRemainder) {
+			return aMinimumProblemSize + 1;
+		}
+		return aMinimumProblemSize;           
+	}
+	
+	private static void createAndStartThreads() {
+		for (int index = 0; index < workers.length; index++) {
+			threads[index] = new Thread(workers[index]);
+			threads[index].start();
+			// comment out this try catch block when asked
 //			try {
-//				threads[index].join();
+//				Thread.sleep(100);
 //			} catch (InterruptedException e) {
 //				e.printStackTrace();
-//			}			
-//		}
-//	}
-//// END BOILER-PLATE FORK_JOIN CONCURRENT CODE	
+//			}
+		}
+	}
+	
+	private static void joinThreads() {
+		for (int index = 0; index < threads.length; index++) {
+			try {
+				threads[index].join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}			
+		}
+	}
+// END BOILER-PLATE FORK_JOIN CONCURRENT CODE	
 	
 }
 //
 class PrimesWorker implements Runnable {
-//	int[] numbers;
-//	int startIndex, stopIndex;
-//	public PrimesWorker(int[] aNumbers, int aStartIndex, int aStopIndex) {
-//		numbers = aNumbers;
-//		startIndex = aStartIndex;
-//		stopIndex = aStopIndex;
-//	}
+	int[] numbers;
+	int startIndex, stopIndex;
+	public PrimesWorker(int[] aNumbers, int aStartIndex, int aStopIndex) {
+		numbers = aNumbers;
+		startIndex = aStartIndex;
+		stopIndex = aStopIndex;
+	}
 	@Override
 	public void run() {
 //		// like sequential code except we do only our part of the problem
-//		ConcurrentPrimeNumbers.fillPrimeNumbers(numbers, startIndex, stopIndex);
+		ConcurrentPrimeNumbers.fillPrimeNumbers(numbers, startIndex, stopIndex);
 	}
 	
 }

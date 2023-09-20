@@ -1,8 +1,8 @@
 import java.lang.*;
 import java.lang.Math;
+import java.util.Arrays;
 import java.util.Random;
 
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class Primes {
 	public static final int NUM_THREADS = 4;

@@ -192,8 +192,7 @@ public class ExtendedConcurrentPrimeNumbers {
 	private static void concurrentFillPrimeNumbers() {
 		createRunnables();
 		createAndStartThreads();
-		joinThreads();
-		
+		joinThreads();		
 	}
 	
 	private static void createRunnables () {
@@ -221,11 +220,14 @@ public class ExtendedConcurrentPrimeNumbers {
 		int aMinimumProblemSize = aProblemSize/numThreads; 
 		// some threads must take one of the remaining iterations
 		int aRemainder = aProblemSize % numThreads; 
+		
+		//uncomment the following block to distribute loads
 		// distribute the remainder among the first aRemainder threads
 //		if (aThreadIndex < aRemainder) {
 //			return aMinimumProblemSize + 1;
 //		}
 		
+		//comment the following block to distribute load
 		// error in distributing the load, give it all to thread 0
 		if (aThreadIndex == 0) {
 			System.out.println("Deliberately creating error in distributing threads, giving remainder to thread 0");

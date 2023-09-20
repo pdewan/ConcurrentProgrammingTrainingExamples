@@ -1,9 +1,5 @@
 package tests;
 
-import java.io.File;
-
-import gradingTools.comp533s20.assignment7.Assignment7Suite;
-import gradingTools.comp533s21.assignment7.S21Assignment7Suite;
 import gradingTools.javaThreads.hello.ConcurrentHelloSuite;
 import trace.grader.basics.GraderBasicsTraceUtility;
 import util.trace.Tracer;

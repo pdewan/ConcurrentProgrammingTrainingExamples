@@ -1,7 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class ConcurrentLuckyNumbers {
 	// all methods and variables accessed by static main must ne static

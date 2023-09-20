@@ -1,16 +1,6 @@
 
-import java.io.File;
-import grader.basics.execution.BasicProjectExecution;
-import gradingTools.comp533s20.assignment7.Assignment7Suite;
-import gradingTools.comp533s21.assignment7.S21Assignment7Suite;
 import gradingTools.javaThreads.PrimeNumbersSuite;
-import gradingTools.javaThreads.JavaThreadsSuite;
-import gradingTools.javaThreads.hello.ConcurrentHelloSuite;
-import gradingTools.javaThreads.luckyNumbers.ConcurrentLuckyNumbersSuite;
-import gradingTools.javaThreads.oddNumbers.ConcurrentOddNumbersSuite;
-import gradingTools.javaThreads.primes.ConcurrentPrimesSuite;
 import trace.grader.basics.GraderBasicsTraceUtility;
-import util.trace.Tracer;
 
 public class RunPrimeNumbersTests {
 	public static void main(String[] args) {

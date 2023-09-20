@@ -189,10 +189,10 @@ public abstract class MyAbstractOddNumbersExecution extends AbstractForkJoinChec
 //		System.out.println ("Thread:" + aThread.getId() + " post join properties: " + aNameValuePairs);
 		int aComputedFinalNumbers = (int) aNameValuePairs.get("Total Num Odd Numbers");
 		if (aComputedFinalNumbers != numExpectedFinalNumbers) {
-			return "Computed final number of odd numbers " + aComputedFinalNumbers + " != " + "expected final numbers " + numExpectedFinalNumbers;
+			return "Computed final number of odd inputList " + aComputedFinalNumbers + " != " + "expected final inputList " + numExpectedFinalNumbers;
 		}
 		if (aComputedFinalNumbers != expectedFinalSet.size()) {
-			return "Computed final number of odd numbers " + aComputedFinalNumbers + " != " + "expected final set size " + expectedFinalSet.size();
+			return "Computed final number of odd inputList " + aComputedFinalNumbers + " != " + "expected final set size " + expectedFinalSet.size();
 		}
 		Set aComputedFinalSet = (Set) aNameValuePairs.get("Odd Numbers");
 		if (!aComputedFinalSet.equals(expectedFinalSet)) {

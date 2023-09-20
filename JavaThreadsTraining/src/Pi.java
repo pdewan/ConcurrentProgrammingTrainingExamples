@@ -1,8 +1,7 @@
 import java.lang.*;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class Pi {
 	public static final int NUM_THREADS = 4;
