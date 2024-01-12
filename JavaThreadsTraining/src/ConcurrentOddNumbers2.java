@@ -7,6 +7,31 @@ import util.misc.ThreadSupport;
 
 // All calls to printProperty are important for testing
 public class ConcurrentOddNumbers2 {
+	/**
+	 * Just as a script can be executed by multiples actors at the same or different 
+	 * times, the main() method can be executed can be executed by multiple threads
+	 * at the same or different times.
+	 * 
+	 * Each time you execute a main class, a different Main thread is created to
+	 * execute the main() method.
+	 * 
+	 * More interestingly, a non Main thread can also call main().	 * 
+	 * This is what happens when you run our tests. The testing thread calls your main() method, 
+	 * sometimes multiple times, with different arguments.
+	 * 
+	 * In this example, any thread that executes this main() method will be called
+	 * a dispatcher or forker thread as its job is to dispatch work to worker
+	 * threads it creates.
+	 * 
+	 * * The Main thread starts when when main() is called and terminates
+	 * when main() ends. In between the start and stop, a stack of calls can be serviced
+	 * by the Main thread. This stack grows and shrinks, as different methods are called,
+	 * In this example, for instance, some example stack snapshots are: 
+	 * ConcurrentOddNumbers.main()->OddNumnbersUtil.fillRandomNumbers
+	 * ConcurrentOddNumbers.main()->OddNumnbersUtil.fillRandomNumbers->OddNumbersUtil.generateRandomNumbers 
+	 * ConcurrentOddNumbers.main()-->ConcurrentOddNumbers.fillOddNumbers()
+	 
+	 */
 	public static final int MAX_RANDOM_NUMBER = 1000;
 	private static int[] randomNumbers; // input list populated based on main argument
 	private static List<Integer> oddNumbers = new ArrayList(); // variable length output list
